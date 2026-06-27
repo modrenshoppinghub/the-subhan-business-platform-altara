@@ -201,7 +201,7 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
         }
 
@@ -214,6 +214,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            min-height: 380px;
         }
 
         .skill-card:hover {
@@ -256,6 +257,7 @@
             overflow: hidden;
             position: relative;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: auto;
         }
 
         .preview-media-box img {
@@ -420,7 +422,6 @@
             text-transform: uppercase;
         }
 
-        /* 2 Column Split Panel Layout */
         .workspace-split {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -476,7 +477,6 @@
             color: white;
         }
 
-        /* Reply Mechanism Layout Elements */
         .reply-box-container {
             background: #04060d;
             border: 1px solid var(--border);
@@ -668,7 +668,6 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
        (function(){
-          // Initialize EmailJS with your public key
           emailjs.init("4NPC1SsXjFKhy9WR9"); 
        })();
     </script>
@@ -694,7 +693,7 @@
     <section class="mainframe skills-section">
         <div class="section-title">
             <h2>Trending Matrix Blueprint</h2>
-            <p>20 high-demand design, creation, and development specializations.</p>
+            <p>30 high-demand design, creation, and development specializations.</p>
         </div>
 
         <div class="skills-grid">
@@ -735,12 +734,299 @@
                 <div>
                     <div class="skill-tag">Intelligence</div>
                     <h3>AI Prompt Engineering</h3>
-                    <p>Context design parameters and transformer alignment maps.</p>
+                    <p>Context design parameters, large language model inputs, and transformer alignment maps.</p>
                 </div>
                 <div class="preview-media-box">
                     <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=400&q=80" alt="AI">
                 </div>
             </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Product Design</div>
+                    <h3>UI/UX Interface Design</h3>
+                    <p>High-fidelity structural wireframes, visual typography hierarchies, and component mapping.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1561070791-26c113006238?auto=format&fit=crop&w=400&q=80" alt="UI/UX Design">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Engineering</div>
+                    <h3>Full Stack Development</h3>
+                    <p>End-to-end client systems building, structural database management, and asynchronous operations.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80" alt="Full Stack">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Media Production</div>
+                    <h3>Video Editing & Motion</h3>
+                    <p>Dynamic keyframing pipelines, asset timeline sequencing, and pacing arrays.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80" alt="Video Editing">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Marketing core</div>
+                    <h3>SEO Architecture</h3>
+                    <p>Keyword indexing parameters, structural authority map scaling, and algorithmic targeting data.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80" alt="SEO Architecture">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Security systems</div>
+                    <h3>Cyber Security Frameworks</h3>
+                    <p>System penetration logs, vulnerability tracking vectors, and cryptographic network architecture.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80" alt="Cyber Security">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">App Engineering</div>
+                    <h3>Mobile App Engineering</h3>
+                    <p>Cross-platform application compile trees, localized native performance arrays, and package structures.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=400&q=80" alt="Mobile Apps">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Infrastructure</div>
+                    <h3>Cloud System DevOps</h3>
+                    <p>Automated pipeline virtualization, localized hosting relays, and active container maps.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80" alt="Cloud Systems">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Data Matrix</div>
+                    <h3>Data Science Processing</h3>
+                    <p>Statistical distribution matrices, information clean structures, and numerical regression trees.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" alt="Data Science">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Decentralized</div>
+                    <h3>Smart Contract Engineering</h3>
+                    <p>Distributed immutable ledger records, cryptographic verification, and programmatic conditions.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=400&q=80" alt="Smart Contracts">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">3D Assets</div>
+                    <h3>3D Geometry Rendering</h3>
+                    <p>Spatial coordinate vertex meshes, procedural shader mapping, and lightning simulation maps.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=400&q=80" alt="3D Modeling">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Digital Retail</div>
+                    <h3>E-Commerce Scaling</h3>
+                    <p>Conversion funnel tracking logs, transactional checkout flows, and catalog metadata management.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=400&q=80" alt="E-Commerce">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Management</div>
+                    <h3>SaaS Product Lifecycle</h3>
+                    <p>Agile release sequence planning, tracking feature dependencies, and strategic target parameters.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=400&q=80" alt="Product Management">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Copy Engineering</div>
+                    <h3>Conversion Copywriting</h3>
+                    <p>Behavioral triggers, psychological framework maps, and highly structured persuasive language layout.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=400&q=80" alt="Copywriting">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Backend Systems</div>
+                    <h3>RESTful API Architecture</h3>
+                    <p>Payload routing endpoint registries, authentication flow integration, and high throughput monitoring.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="API Architecture">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Advanced AI</div>
+                    <h3>Machine Learning Models</h3>
+                    <p>Algorithmic training weight matrices, neural network layering, and prediction arrays compilation.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?auto=format&fit=crop&w=400&q=80" alt="Machine Learning">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Simulation</div>
+                    <h3>Interactive Game Engines</h3>
+                    <p>Physics vector mechanics calculations, asset rendering update loops, and input telemetry handling.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1556438342-94f58672b33f?auto=format&fit=crop&w=400&q=80" alt="Game Dev">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Media Outreach</div>
+                    <h3>Campaign Metrics Scale</h3>
+                    <p>Audience demographic clustering, outreach tracking grids, and performance ROI indexing logs.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=400&q=80" alt="Influencer Marketing">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Acoustics</div>
+                    <h3>Digital Audio Processing</h3>
+                    <p>Frequency equalizer spectrum filters, dynamic compression arrays, and clean voice synthesis setup.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=400&q=80" alt="Audio Engineering">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Corporate Core</div>
+                    <h3>Identity System Systems</h3>
+                    <p>Visual standards configuration blueprints, typography asset pairing, and global theme parameters.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=400&q=80" alt="Brand Identity">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Scaling</div>
+                    <h3>Conversion Optimization</h3>
+                    <p>A/B distribution testing arrays, systemic user churn tracking, and product loops acceleration.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Growth Hacking">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Spatial Computing</div>
+                    <h3>Immersive Reality Matrix</h3>
+                    <p>Real-time environment coordinate transforms, stereoscopic device tracking, and virtual interactive canvas.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=400&q=80" alt="AR/VR Computing">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Motion Design</div>
+                    <h3>Kinetic Vector Layouts</h3>
+                    <p>Dynamic path text distortions, expression controllers mapping, and layout rendering processing.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1618005198143-e5283b019a72?auto=format&fit=crop&w=400&q=80" alt="Kinetic Typography">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Testing Core</div>
+                    <h3>Automated Bug Tracking</h3>
+                    <p>Functional integration test script compiling, stress execution pipelines, and validation telemetry.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=400&q=80" alt="QA Testing">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Infrastructure</div>
+                    <h3>Distributed Data Clusters</h3>
+                    <p>High-volume streaming information pipelines, cluster map execution partitioning, and storage nodes config.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=400&q=80" alt="Big Data">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Media Systems</div>
+                    <h3>Automated Distribution Blueprints</h3>
+                    <p>Algorithmic content calendar matrix arrays, engagement tracking analytics, and payload repurposing pipelines.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1432821596592-e2c18b78144f?auto=format&fit=crop&w=400&q=80" alt="Content Strategy">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Systems Logic</div>
+                    <h3>Secure Kernel Engineering</h3>
+                    <p>Root system register monitoring rules, firewall isolation setups, and remote shell cluster operations.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=400&q=80" alt="Linux Admin">
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -805,8 +1091,7 @@
 
                 <div class="workspace-split">
                     <div class="left-panel">
-                        <div class="log-stream" id="logStream">
-                            </div>
+                        <div class="log-stream" id="logStream"></div>
                         
                         <div class="reply-box-container">
                             <h4>💬 Dispatch Operator Reply Protocol</h4>
@@ -855,17 +1140,14 @@
         let mapCoreInstance = null;
         let selectedLogForReply = null;
 
-        // --- LOCAL STORAGE DATA SETUP ---
         let systemLogs = JSON.parse(localStorage.getItem('sts_packets')) || [
-            { id: 1, name: "Subhan Admin", email: "subhan@studio.com", message: "Initial secure handshake verified.", ip: "182.178.45.12", time: "Just Now" }
+            { id: 1, name: "Subhan Admin", email: "subhan@studio.com", message: "Initial secure handshake verified.", ip: "182.178.45.12", time: "Just Now", lat: 24.8607, lng: 67.0011 }
         ];
 
         window.onload = function() {
             renderLogsInOffice();
-            simulateSecurityMonitoring();
         };
 
-        // --- AI CHAT CORE ENGINE (CLIENT CLIENT GUIDANCE) ---
         function toggleAiWidget() {
             let widget = document.getElementById('aiWidget');
             widget.style.display = widget.style.display === 'flex' ? 'none' : 'flex';
@@ -892,26 +1174,24 @@
 
             indicator.style.display = 'block';
 
-            // Smart Client Guide Answers Simulated
             setTimeout(() => {
                 indicator.style.display = 'none';
                 let aiResponse = "Mujhe aapki query mil gayi hai. STS system bilkul secure hai aur aapka data encrypted hai.";
                 
                 let lowerMsg = msg.toLowerCase();
-                if(lowerMsg.includes('design') || lowerMsg.includes('graphic')) {
-                    aiResponse = "STS Graphic Design core me vector layouts aur creative thumbnails top trends par hain!";
+                if(lowerMsg.includes('design') || lowerMsg.includes('graphic') || lowerMsg.includes('thumbnail')) {
+                    aiResponse = "STS Design system me 30 total trending matrix blueprint set ho chuke hain, jo portfolio grids par real-time dynamic sync maps show kar rahe hain.";
                 } else if(lowerMsg.includes('secure') || lowerMsg.includes('security')) {
-                    aiResponse = "Hamara firewall har packet transmission ko real-time scan karta hai taake injection attacks se bacha ja sakay.";
+                    aiResponse = "Hamara tracker system transmission logs ko directly browser telemetry memory parameters framework me block / parse karta hai.";
                 } else if(lowerMsg.includes('contact') || lowerMsg.includes('form')) {
-                    aiResponse = "Aap form me detail fill kar ke 'Transmit Target Packet' button par click karen, data seedha admin inbox me jayega.";
+                    aiResponse = "Aap form fill kar ke packet safely route transmission registers me register karwa sakte hain.";
                 }
 
                 chatBody.insertBefore(createMessageElement(aiResponse, 'bot'), indicator);
                 chatBody.scrollTop = chatBody.scrollHeight;
-            }, 1200);
+            }, 1000);
         }
 
-        // --- LIVE FORM PREVIEW ---
         function renderLivePreview() {
             let name = document.getElementById('clientName').value;
             let msg = document.getElementById('clientMsg').value;
@@ -919,152 +1199,110 @@
             document.getElementById('previewMsg').innerText = msg ? msg : "---";
         }
 
-        // --- SECURITY VALIDATION & EMAILJS SUBMISSION ---
-        function handleFormSubmission(event) {
-            event.preventDefault();
-            
-            let nameInput = document.getElementById('clientName').value;
-            let emailInput = document.getElementById('clientEmail').value;
-            let msgInput = document.getElementById('clientMsg').value;
-
-            // XSS & Code Injection Protection Logic
-            if(nameInput.includes("<") || msgInput.includes("<") || msgInput.includes("script")) {
-                alert("🚨 Security Alert: Malicious structural tags detected in payload! Transmission terminated.");
-                return;
-            }
-
-            // EmailJS Transmission Config
-            // Service ID: 'default_service', Template ID: 'template_id' (Inko apne dashboard ke mutabiq badlein)
-            emailjs.send("default_service", "template_id", {
-                from_name: nameInput,
-                reply_to: emailInput,
-                message: msgInput
-            }).then(() => {
-                alert("🚀 Metadata packet payload successfully sent via EmailJS!");
-            }).catch((err) => {
-                console.log("EmailJS Error: ", err);
-                alert("Packet routed locally (EmailJS setup required inside scripts).");
-            });
-
-            // Save to Admin Log stream locally
-            let newPacket = {
-                id: Date.now(),
-                name: nameInput,
-                email: emailInput,
-                message: msgInput,
-                ip: "182.178." + Math.floor(Math.random() * 255) + "." + Math.floor(Math.random() * 255),
-                time: "New Node"
-            };
-
-            systemLogs.push(newPacket);
-            localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
-            renderLogsInOffice();
-            document.getElementById('secureForm').reset();
-            renderLivePreview();
-        }
-
-        // --- ADMIN OFFICE MODAL GATE ---
         function openAdminGate() {
             document.getElementById('adminModal').style.display = 'flex';
-            if(!mapCoreInstance) {
-                // Initialize premium leaflet cyber map tracking
-                mapCoreInstance = L.map('liveAdminMap').setView([24.8607, 67.0011], 10);
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(mapCoreInstance);
-                document.getElementById('mapPlaceholder').style.display = 'none';
-            }
+            setTimeout(() => {
+                initializeDashboardMap(24.8607, 67.0011);
+            }, 300);
         }
 
         function closeAdminGate() {
             document.getElementById('adminModal').style.display = 'none';
         }
 
-        // --- ADMIN RENDER AND MESSAGE DELETION ---
+        function handleFormSubmission(e) {
+            e.preventDefault();
+            let name = document.getElementById('clientName').value;
+            let email = document.getElementById('clientEmail').value;
+            let message = document.getElementById('clientMsg').value;
+
+            let newLog = {
+                id: Date.now(),
+                name: name,
+                email: email,
+                message: message,
+                ip: "182." + Math.floor(Math.random() * 200) + ".45." + Math.floor(Math.random() * 254),
+                time: "New Node",
+                lat: 24.86 + (Math.random() - 0.5) * 0.1,
+                lng: 67.00 + (Math.random() - 0.5) * 0.1
+            };
+
+            systemLogs.push(newLog);
+            localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
+            renderLogsInOffice();
+            document.getElementById('secureForm').reset();
+            renderLivePreview();
+            alert("Packet transmitted successfully to Local Memory Stream!");
+        }
+
         function renderLogsInOffice() {
-            let container = document.getElementById('logStream');
-            container.innerHTML = '';
+            let stream = document.getElementById('logStream');
+            stream.innerHTML = '';
             document.getElementById('countMsg').innerText = systemLogs.length;
 
             systemLogs.forEach(log => {
                 let div = document.createElement('div');
                 div.className = 'log-item';
                 div.innerHTML = `
-                    <div onclick="selectLogNode(${log.id})" style="flex:1;">
-                        <strong>[${log.time}] ${log.name}</strong> - <small>${log.ip}</small><br>
-                        <span style="color:var(--text-secondary); font-size:0.75rem;">${log.message.substring(0,40)}...</span>
+                    <div onclick="selectLogEntry(${log.id})">
+                        <strong>${log.name}</strong> - <span style="color:var(--accent-cyan); font-size:0.75rem;">${log.ip}</span><br>
+                        <span style="font-size:0.75rem; color:var(--text-secondary);">${log.message}</span>
                     </div>
-                    <button class="delete-msg-btn" onclick="deleteLogNode(event, ${log.id})">Delete</button>
+                    <button class="delete-msg-btn" onclick="deleteLogEntry(${log.id}, event)">X</button>
                 `;
-                container.appendChild(div);
+                stream.appendChild(div);
             });
         }
 
-        function deleteLogNode(event, id) {
-            event.stopPropagation(); // Prevents map tracking selection when clicking delete
-            if(confirm("Are you sure you want to delete this client packet?")) {
-                systemLogs = systemLogs.filter(log => log.id !== id);
-                localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
-                renderLogsInOffice();
-                alert("Packet removed successfully from Admin Office registers.");
-            }
+        function selectLogEntry(id) {
+            let log = systemLogs.find(l => l.id === id);
+            if(!log) return;
+
+            selectedLogForReply = log;
+            document.getElementById('replyTargetLabel').innerText = "Target Operator Node: " + log.name;
+            document.getElementById('replyEmailLabel').innerText = "Destination Email: " + log.email;
+            document.getElementById('mapTargetStatus').innerText = "Tracking Geo Coordinates: [" + log.lat.toFixed(4) + ", " + log.lng.toFixed(4) + "]";
+            
+            let placeholder = document.getElementById('mapPlaceholder');
+            if(placeholder) placeholder.style.display = 'none';
+
+            initializeDashboardMap(log.lat, log.lng);
         }
 
-        function selectLogNode(id) {
-            let selected = systemLogs.find(log => log.id === id);
-            if(!selected) return;
+        function deleteLogEntry(id, e) {
+            e.stopPropagation();
+            systemLogs = systemLogs.filter(l => l.id !== id);
+            localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
+            renderLogsInOffice();
+        }
 
-            selectedLogForReply = selected;
-            document.getElementById('replyTargetLabel').innerText = `Target Node: ${selected.name}`;
-            document.getElementById('replyEmailLabel').innerText = `Destination Email: ${selected.email}`;
-            document.getElementById('mapTargetStatus').innerText = `Tracing coordinates for IP: ${selected.ip}`;
+        function purgeSystemLogs() {
+            systemLogs = [];
+            localStorage.removeItem('sts_packets');
+            renderLogsInOffice();
+        }
 
-            // Random mapping tracker action inside Karachi/Pakistan sector
-            let lat = 24.86 + (Math.random() * 0.1 - 0.05);
-            let lng = 67.00 + (Math.random() * 0.1 - 0.05);
-            mapCoreInstance.setView([lat, lng], 12);
+        function initializeDashboardMap(lat, lng) {
+            if (mapCoreInstance) {
+                mapCoreInstance.remove();
+            }
+            mapCoreInstance = L.map('liveAdminMap').setView([lat, lng], 13);
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(mapCoreInstance);
             L.marker([lat, lng]).addTo(mapCoreInstance)
-                .bindPopup(`<b>${selected.name}</b><br>${selected.ip}`).openPopup();
+                .bindPopup('Node Target Signal Found.')
+                .openPopup();
         }
 
         function executeReplyTransmission() {
             if(!selectedLogForReply) {
-                alert("Please select a client message log first.");
+                alert("Please select a payload node log target stream first.");
                 return;
             }
             let text = document.getElementById('replyTextarea').value;
             if(!text) return;
 
-            alert(`Administrative reply dispatched to ${selectedLogForReply.email} successfully.`);
+            alert("Transmission simulated to " + selectedLogForReply.email);
             document.getElementById('replyTextarea').value = '';
-        }
-
-        function purgeSystemLogs() {
-            if(confirm("Reset all administrative logs?")) {
-                systemLogs = [];
-                localStorage.removeItem('sts_packets');
-                renderLogsInOffice();
-            }
-        }
-
-        // --- REALTIME AI PERFORMACE & SECURITY UPDATES SIMULATOR ---
-        function simulateSecurityMonitoring() {
-            setInterval(() => {
-                let chatBody = document.getElementById('aiChatBody');
-                let indicator = document.getElementById('aiTypingIndicator');
-                
-                let statuses = [
-                    "⚡ Real-time Shield: System optimized with localized tracker encryption.",
-                    "🔒 Security Core: Port 443 scanned. 0 structural vulnerabilities found.",
-                    "🔄 Update Core: Trending Matrix blueprint optimized for higher CTR tracking."
-                ];
-                
-                let randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
-                let statusDiv = document.createElement('div');
-                statusDiv.className = "ai-msg system-status";
-                statusDiv.innerText = randomStatus;
-                
-                chatBody.insertBefore(statusDiv, indicator);
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }, 15000); // Har 15 seconds baad auto status console update
         }
     </script>
 </body>
