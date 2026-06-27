@@ -1130,6 +1130,10 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
+        // Real Configuration IDs Sync
+        const MY_EMAILJS_SERVICE_ID = "service_zmid3wf";
+        const MY_EMAILJS_TEMPLATE_ID = "template_nahjtgc";
+
         let mapCoreInstance = null;
         let selectedLogForReply = null;
 
@@ -1196,7 +1200,6 @@
             document.getElementById('previewMsg').innerText = msg ? msg : "---";
         }
 
-        // UPDATED: Added prompt asking for password input authentication
         function openAdminGate() {
             let userKey = prompt("Enter Administrative Security Key to Enter Office:");
             
@@ -1219,6 +1222,7 @@
             let name = document.getElementById('clientName').value;
             let email = document.getElementById('clientEmail').value;
             let message = document.getElementById('clientMsg').value;
+            
             let newLog = {
                 id: Date.now(),
                 name: name,
@@ -1229,12 +1233,26 @@
                 lat: 24.86 + (Math.random() - 0.5) * 0.1,
                 lng: 67.00 + (Math.random() - 0.5) * 0.1
             };
-            systemLogs.push(newLog);
-            localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
-            renderLogsInOffice();
-            document.getElementById('secureForm').reset();
-            renderLivePreview();
-            alert("Packet transmitted successfully to Local Memory Stream!");
+
+            var templateParams = {
+                to_name: "Subhan Admin",
+                from_name: name,
+                from_email: email,
+                message: message
+            };
+
+            emailjs.send(MY_EMAILJS_SERVICE_ID, MY_EMAILJS_TEMPLATE_ID, templateParams)
+                .then(function(response) {
+                    systemLogs.push(newLog);
+                    localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
+                    renderLogsInOffice();
+                    document.getElementById('secureForm').reset();
+                    renderLivePreview();
+                    alert("Success! Packet completely transmitted via EmailJS and stored in local stream logs.");
+                }, function(error) {
+                    console.log("EmailJS Error: ", error);
+                    alert("Transmission failed. Please check your EmailJS dashboard settings.");
+                });
         }
 
         function renderLogsInOffice() {
@@ -1312,14 +1330,13 @@
                 message: text
             };
 
-            emailjs.send('default_service', 'YOUR_TEMPLATE_ID', templateParams)
+            emailjs.send(MY_EMAILJS_SERVICE_ID, MY_EMAILJS_TEMPLATE_ID, templateParams)
                 .then(function(response) {
                     alert("Transmission successfully delivered via routing email to " + selectedLogForReply.email);
                     document.getElementById('replyTextarea').value = '';
                 }, function(error) {
-                    console.log("EmailJS failed initialization, running fallback channel simulation...", error);
-                    alert("Transmission simulated to " + selectedLogForReply.email + "\nMessage: " + text);
-                    document.getElementById('replyTextarea').value = '';
+                    console.log("EmailJS Error: ", error);
+                    alert("Error sending reply message. Verify if parameters match your template configuration.");
                 });
         }
     </script>
