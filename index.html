@@ -838,30 +838,8 @@
                 <div class="preview-media-box">
                     <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=400&q=80" alt="Smart Contracts">
                 </div>
-            </div>
-
-            <div class="skill-card">
-                <div>
-                    <div class="skill-tag">3D Assets</div>
-                    <h3>3D Geometry Rendering</h3>
-                    <p>Spatial coordinate vertex meshes, procedural shader mapping, and lightning simulation maps.</p>
-                </div>
-                <div class="preview-media-box">
-                    <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=400&q=80" alt="3D Modeling">
-                </div>
-            </div>
-
-            <div class="skill-card">
-                <div>
-                    <div class="skill-tag">Digital Retail</div>
-                    <h3>E-Commerce Scaling</h3>
-                    <p>Conversion funnel tracking logs, transactional checkout flows, and catalog metadata management.</p>
-                </div>
-                <div class="preview-media-box">
-                    <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=400&q=80" alt="E-Commerce">
-                </div>
-            </div>
-        </div>
+            </div> 
+        </div> 
     </section>
 
     <section class="mainframe contact-section">
@@ -892,184 +870,169 @@
         </div>
     </section>
 
-    <div class="admin-modal" id="adminModal">
+    <div class="admin-modal" id="officeGateModal">
         <div class="admin-box">
             <div class="admin-header">
-                <span>🛰️ SUBHAN TECHNICAL STUDIO // ADMINISTRATIVE DASHBOARD CONFIG</span>
+                <div>🛰️ STS CORE NODE DISPATCH OPERATOR CONSOLE // V4.0.2</div>
                 <div class="admin-office-actions">
-                    <div style="font-size: 0.75rem; color: var(--accent-emerald); background: rgba(16,185,129,0.1); padding: 4px 10px; border-radius: 4px;">• GEOLOCATION ENGINE ONLINE</div>
-                    <button class="exit-office-btn" onclick="closeAdminGate()">EXIT OFFICE</button>
+                    <button class="exit-office-btn" onclick="closeAdminGate()">DISCONNECT PROTOCOL</button>
                 </div>
             </div>
             <div class="admin-body">
                 <div class="metrics-bar">
-                    <div class="metric-tile">
-                        <div id="countMsg">0</div>
-                        <span>Logged Packets</span>
-                    </div>
-                    <div class="metric-tile">
-                        <div id="countGeo">1</div>
-                        <span>Tracked Regions</span>
-                    </div>
-                    <div class="metric-tile">
-                        <div id="lastNodeIP">182.178.45.12</div>
-                        <span>Gateway IP</span>
-                    </div>
-                    <div class="metric-tile">
-                        <div id="lastNodeISP" style="color: var(--accent-purple); font-size: 0.9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">PTCL Backbone</div>
-                        <span>ISP Backbone</span>
-                    </div>
+                    <div class="metric-tile"><div id="metricTotal">0</div><span>Total Payloads</span></div>
+                    <div class="metric-tile"><div id="metricLat">0.0000</div><span>Active Node Lat</span></div>
+                    <div class="metric-tile"><div id="metricLng">0.0000</div><span>Active Node Lng</span></div>
+                    <div class="metric-tile"><div style="color: var(--accent-purple);" id="metricCountry">UNKNOWN</div><span>Node Origin</span></div>
                 </div>
                 <div class="workspace-split">
                     <div class="left-panel">
-                        <div class="log-stream" id="logStream"></div>
+                        <div class="log-stream" id="officeLogStreamBox">
+                            </div>
                         <div class="reply-box-container">
-                            <h4>💬 Dispatch Operator Reply Protocol</h4>
-                            <div id="replyTargetLabel" style="font-size: 0.8rem; color: var(--text-secondary);">Target: None selected</div>
-                            <div id="replyEmailLabel" style="font-size: 0.75rem; color: var(--accent-cyan); margin-top: -6px; font-weight: bold;">Destination Email: N/A</div>
-                            <textarea id="replyTextarea" class="reply-textarea" placeholder="Type administrative response payload instructions..."></textarea>
-                            <button class="btn-reply" onclick="executeReplyTransmission()">Send Response Payload</button>
+                            <h4>🛰️ DISPATCH OPERATOR REPLY PROTOCOL</h4>
+                            <textarea id="replyTextarea" class="reply-textarea" placeholder="Formulate reply transmission data streams..."></textarea>
+                            <button class="btn-reply" onclick="executeReplyTransmission()">SEND RESPONSE PAYLOAD</button>
                         </div>
                     </div>
                     <div class="map-view-container">
-                        <div class="map-header-status">LIVE NODE DEPLOYMENT RADAR OVERLAY // RESOLVING LOCAL SYNC</div>
+                        <div class="map-header-status">🔴 GEOSPATIAL LIVE TELEMETRY ARRAY MAP PREVIEW</div>
                         <div id="liveAdminMap"></div>
-                        <div class="map-placeholder-text" id="mapPText">Radar Active. Select any active system data packet stream payload on the left to resolve coordinate telemetry targets instantly.</div>
+                        <div class="map-placeholder-text" id="mapPlaceholderLabel">
+                            Select a target packet node log payload to render live satellite tracking relay vectors.
+                        </div>
                     </div>
                 </div>
                 <div class="admin-footer">
-                    <button class="purge-btn" onclick="purgeSystemLogs()">PURGE MEMORY REGISTERS</button>
-                    <span style="font-size:0.75rem; font-family:'JetBrains Mono'; color:var(--text-secondary)">STS v4.2.1-SECURE</span>
+                    <button class="purge-btn" onclick="purgeSystemLogs()">PURGE LOCAL REGISTERS</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <button class="ai-trigger-btn" onclick="toggleAIChatWidget()">🤖</button>
-    <div class="ai-chat-widget" id="aiChatWidget">
+    <button class="ai-trigger-btn" onclick="toggleAiWidget()">🤖</button>
+    <div class="ai-chat-widget" id="aiWidgetBox">
         <div class="ai-chat-header">
-            <span>🛡️ STS AI Core Assistant</span>
-            <button style="background:transparent; border:none; color:white; font-size:1.1rem; cursor:pointer;" onclick="toggleAIChatWidget()">×</button>
+            <div>🤖 STS ARTIFICIAL CORE RELAY</div>
+            <button onclick="toggleAiWidget()" style="background:transparent; border:none; color:white; font-weight:bold; cursor:pointer;">X</button>
         </div>
-        <div class="ai-chat-body" id="aiChatBody">
-            <div class="ai-msg bot">Identity confirmed. I am the Subhan Technical Studio automated background process monitor. Ask anything about our skills matrix mapping.</div>
+        <div class="ai-chat-body" id="aiChatFeedBox">
+            <div class="ai-msg bot">Greetings. I am the Subhan Technical Studio Core AI Assistant. Ask me anything about tracking metrics, skills matrix configuration or telemetry synchronization.</div>
         </div>
         <div class="ai-chat-footer">
-            <input type="text" id="aiInput" class="form-control" style="padding:10px;" placeholder="Query system logs..." onkeypress="handleAIPress(event)">
-            <button class="btn-submit" style="width:auto; padding:10px 16px; border-radius:12px;" onclick="sendAICoreQuery()">Go</button>
+            <input type="text" id="aiInputText" class="form-control" style="padding:8px 12px; font-size:0.85rem;" placeholder="Type AI inquiry payload..." onkeypress="if(event.key==='Enter') executeAiInquiry()">
+            <button class="btn-reply" style="padding:6px 12px; font-size:0.85rem;" onclick="executeAiInquiry()">SEND</button>
         </div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        let systemLogs = [];
+        let systemLogs = JSON.parse(localStorage.getItem('sts_packets')) || [];
         let selectedLogForReply = null;
         let mapCoreInstance = null;
 
         window.addEventListener('DOMContentLoaded', () => {
-            const raw = localStorage.getItem('sts_packets');
-            if(raw) {
-                try {
-                    systemLogs = JSON.parse(raw);
-                } catch(e) {
-                    systemLogs = [];
-                }
-            }
-            renderLogsInOffice();
+            renderLivePreview();
         });
 
         function renderLivePreview() {
-            let name = document.getElementById('clientName').value;
-            let msg = document.getElementById('clientMsg').value;
-            document.getElementById('previewName').innerText = name ? name : "---";
-            document.getElementById('previewMsg').innerText = msg ? msg : "---";
+            let n = document.getElementById('clientName').value;
+            let m = document.getElementById('clientMsg').value;
+            document.getElementById('previewName').innerText = n ? n : '---';
+            document.getElementById('previewMsg').innerText = m ? m : '---';
         }
 
         function handleFormSubmission(e) {
             e.preventDefault();
             let name = document.getElementById('clientName').value;
             let email = document.getElementById('clientEmail').value;
-            let msg = document.getElementById('clientMsg').value;
+            let message = document.getElementById('clientMsg').value;
 
-            // Simulated background trackers
-            let mockLat = (24.86 + (Math.random() - 0.5) * 0.15).toFixed(4);
-            let mockLng = (67.00 + (Math.random() - 0.5) * 0.15).toFixed(4);
+            // Simulated Geo Coordinates
+            let lat = (Math.random() * (34 - 24) + 24).toFixed(4);
+            let lng = (Math.random() * (74 - 62) + 62).toFixed(4);
 
-            let packet = {
-                id: Date.now(),
-                name: name,
-                email: email,
-                message: msg,
-                lat: parseFloat(mockLat),
-                lng: parseFloat(mockLng),
-                timestamp: new Date().toLocaleTimeString()
-            };
-
-            systemLogs.push(packet);
+            let newLog = { id: Date.now(), name, email, message, lat, lng, country: 'Pakistan', time: new Date().toLocaleTimeString() };
+            systemLogs.push(newLog);
             localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
-            
-            alert("Transmission success! Packet logged into memory registry clusters safely.");
+
+            alert("Packet Transmitted safely! Operator: " + name + " | Coordinates saved securely.");
             document.getElementById('secureForm').reset();
             renderLivePreview();
-            renderLogsInOffice();
         }
 
         function openAdminGate() {
-            document.getElementById('adminModal').style.display = 'flex';
+            document.getElementById('officeGateModal').style.display = 'flex';
             renderLogsInOffice();
-            if (systemLogs.length > 0) {
-                selectLogEntry(systemLogs[0].id);
-            } else {
-                initializeDashboardMap(24.8607, 67.0011);
-            }
         }
 
         function closeAdminGate() {
-            document.getElementById('adminModal').style.display = 'none';
+            document.getElementById('officeGateModal').style.display = 'none';
+        }
+
+        function toggleAiWidget() {
+            let box = document.getElementById('aiWidgetBox');
+            box.style.display = box.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function executeAiInquiry() {
+            let input = document.getElementById('aiInputText');
+            let query = input.value.trim();
+            if(!query) return;
+
+            let feed = document.getElementById('aiChatFeedBox');
+            let userMsg = document.createElement('div');
+            userMsg.className = 'ai-msg user';
+            userMsg.innerText = query;
+            feed.appendChild(userMsg);
+            input.value = '';
+
+            setTimeout(() => {
+                let botMsg = document.createElement('div');
+                botMsg.className = 'ai-msg bot';
+                botMsg.innerText = "Analyzing query packet data... The core metrics are synchronized. Subhan Technical Studio systems running normally at 100% capacity.";
+                feed.appendChild(botMsg);
+                feed.scrollTop = feed.scrollHeight;
+            }, 800);
         }
 
         function renderLogsInOffice() {
-            document.getElementById('countMsg').innerText = systemLogs.length;
-            let stream = document.getElementById('logStream');
-            stream.innerHTML = '';
+            document.getElementById('metricTotal').innerText = systemLogs.length;
+            let container = document.getElementById('officeLogStreamBox');
+            container.innerHTML = '';
 
             if(systemLogs.length === 0) {
-                stream.innerHTML = '<div style="color:#64748b; font-size:0.8rem; text-align:center; padding-top:40px;">No inbound packets cached.</div>';
-                document.getElementById('replyTargetLabel').innerText = "Target: None selected";
-                document.getElementById('replyEmailLabel').innerText = "Destination Email: N/A";
-                selectedLogForReply = null;
+                container.innerHTML = `<div style="color: #64748b; font-style:italic; text-align:center; margin-top:40px;">No incoming data logs captured inside local storage buffer registers yet.</div>`;
                 return;
             }
 
             systemLogs.forEach(log => {
-                let activeClass = (selectedLogForReply && selectedLogForReply.id === log.id) ? 'active' : '';
-                let div = document.createElement('div');
-                div.className = `log-item ${activeClass}`;
-                div.onclick = () => selectLogEntry(log.id);
-                div.innerHTML = `
-                    <div>
-                        <span style="color:var(--accent-cyan); font-weight:bold;">[${log.timestamp}]</span> 
-                        <span>${log.name}</span>
+                let item = document.createElement('div');
+                item.className = 'log-item';
+                if(selectedLogForReply && selectedLogForReply.id === log.id) item.className += ' active';
+                
+                item.innerHTML = `
+                    <div onclick="selectLogNodeTarget(${log.id})">
+                        <strong style="color: var(--accent-cyan);">${log.name}</strong> [${log.time}]<br>
+                        <span style="color: #64748b; font-size:0.75rem;">${log.email}</span>
                     </div>
-                    <button class="delete-msg-btn" onclick="deleteLogEntry(${log.id}, event)">DEL</button>
+                    <button class="delete-msg-btn" onclick="deleteLogEntry(${log.id}, event)">DELETE</button>
                 `;
-                stream.appendChild(div);
+                container.appendChild(item);
             });
         }
 
-        function selectLogEntry(id) {
+        function selectLogNodeTarget(id) {
             let log = systemLogs.find(l => l.id === id);
             if(!log) return;
             selectedLogForReply = log;
-            
-            document.getElementById('replyTargetLabel').innerText = "Target Operator: " + log.name;
-            document.getElementById('replyEmailLabel').innerText = "Destination Email: " + log.email;
-            
-            // Re-render logs list to update active state CSS
-            let items = document.querySelectorAll('.log-item');
             renderLogsInOffice();
 
-            document.getElementById('mapPText').style.display = 'none';
+            document.getElementById('metricLat').innerText = log.lat;
+            document.getElementById('metricLng').innerText = log.lng;
+            document.getElementById('metricCountry').innerText = log.country;
+            document.getElementById('mapPlaceholderLabel').style.display = 'none';
+
             initializeDashboardMap(log.lat, log.lng);
         }
 
@@ -1077,9 +1040,7 @@
             e.stopPropagation();
             systemLogs = systemLogs.filter(l => l.id !== id);
             localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
-            if(selectedLogForReply && selectedLogForReply.id === id) {
-                selectedLogForReply = null;
-            }
+            if(selectedLogForReply && selectedLogForReply.id === id) selectedLogForReply = null;
             renderLogsInOffice();
         }
 
@@ -1112,57 +1073,21 @@
                 return;
             }
 
-            // EmailJS send functionality integrated here
-            // It sends to the user's email dynamically using parameters
+            // Real EmailJS dynamic transmission protocol
             let templateParams = {
                 to_name: selectedLogForReply.name,
                 to_email: selectedLogForReply.email,
                 message: text
             };
 
-            // note: Aap apne EmailJS Dashboard me check karein ke aapka Service ID aur Template ID kya hai.
-            // Yahan "default_service" aur "template_id" ko change kar sakte hain agar zaroorat ho.
-            emailjs.send('default_service', 'YOUR_TEMPLATE_ID', templateParams)
+            // Template ID dynamic injection completed securely
+            emailjs.send('default_service', 'template_nahjtgc', templateParams)
                 .then(function(response) {
                     alert("Transmission successfully sent to " + selectedLogForReply.email);
                     document.getElementById('replyTextarea').value = '';
                 }, function(error) {
                     alert("EmailJS Failed to transmit: " + JSON.stringify(error));
                 });
-        }
-
-        function toggleAIChatWidget() {
-            let widget = document.getElementById('aiChatWidget');
-            widget.style.display = (widget.style.display === 'none' || widget.style.display === '') ? 'flex' : 'none';
-        }
-
-        function handleAIPress(e) {
-            if(e.key === 'Enter') sendAICoreQuery();
-        }
-
-        function sendAICoreQuery() {
-            let input = document.getElementById('aiInput');
-            let query = input.value;
-            if(!query) return;
-
-            let body = document.getElementById('aiChatBody');
-            
-            let userDiv = document.createElement('div');
-            userDiv.className = 'ai-msg user';
-            userDiv.innerText = query;
-            body.appendChild(userDiv);
-            
-            input.value = '';
-            body.scrollTop = body.scrollHeight;
-
-            // Simple mock processor response
-            setTimeout(() => {
-                let botDiv = document.createElement('div');
-                botDiv.className = 'ai-msg bot';
-                botDiv.innerText = "Analyzing target metric: '" + query + "'. System configuration matches active database clusters securely.";
-                body.appendChild(botDiv);
-                body.scrollTop = body.scrollHeight;
-            }, 800);
         }
     </script>
 </body>
