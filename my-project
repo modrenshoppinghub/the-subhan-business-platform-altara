@@ -2,13 +2,12 @@ my-project/
 ├── api/
 │   ├── login.js
 │   ├── user.js
-│   └── update-code.js    <-- Live AI Automation code yahan jayega
+│   └── update-code.js
 ├── public/
 │   └── favicon.ico
 ├── src/
-│   ├── App.jsx           <-- (MAJOOD FILE) Isko open kar ke code replace karein
+│   ├── App.jsx           <-- (Isko open karein aur neeche wala code paste kar dein)
 │   └── main.jsx
-├── .gitignore
 ├── index.html
 ├── package.json
-└── vercel.json           <-- Routing file
+└── vercel.json
