@@ -1,13 +1,15 @@
-my-project/
-├── api/
+modernshoppinghub/       <-- Aapki main repository (Root)
+├── api/                 <-- Backend folder
 │   ├── login.js
 │   ├── user.js
-│   └── update-code.js
-├── public/
+│   └── update-code.js   <-- Live AI Automation code
+├── public/              <-- Assets folder
 │   └── favicon.ico
-├── src/
-│   ├── App.jsx           <-- (Isko open karein aur neeche wala code paste kar dein)
-│   └── main.jsx
-├── index.html
-├── package.json
-└── vercel.json
+├── src/                 <-- Frontend folder
+│   ├── App.jsx          <-- (30 Skills wala code yahan)
+│   └── main.jsx         <-- (React entry file jo add karni ha)
+├── .gitignore           <-- Temporary files block karne ke liye
+├── index.html           <-- Main HTML file
+├── package.json         <-- (ZAROORI) React/Vite dependencies
+├── style.css            <-- Aapki custom CSS file
+└── vercel.json          <-- Vercel configuration file
