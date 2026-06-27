@@ -659,11 +659,6 @@
     </style>
     
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-       (function(){
-          emailjs.init("4NPC1SsXjFKhy9WR9"); 
-       })();
-    </script>
 </head>
 <body>
 
@@ -1130,16 +1125,17 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // Real Configuration IDs Sync
+        // Real Credentials Sync Setup
         const MY_EMAILJS_SERVICE_ID = "service_zmid3wf";
         const MY_EMAILJS_TEMPLATE_ID = "template_nahjtgc";
+        const MY_EMAILJS_PUBLIC_KEY = "4NPC1SsXjFKhy9WR9";
 
         let mapCoreInstance = null;
         let selectedLogForReply = null;
 
         let systemLogs = JSON.parse(localStorage.getItem('sts_packets')) || [
             { id: 1, name: "Subhan Admin", email: "subhan@studio.com", message: "Initial secure handshake verified.", ip: "182.178.45.12", time: "Just Now", lat: 24.8607, lng: 67.0011 }
-       ];
+        ];
 
         window.onload = function() {
             renderLogsInOffice();
@@ -1180,10 +1176,10 @@
                 let aiResponse = "Mujhe aapki query mil gayi hai. STS system bilkul secure hai aur aapka data encrypted hai.";
                 
                 let lowerMsg = msg.toLowerCase();
-                 if(lowerMsg.includes('design') || lowerMsg.includes('graphic') || lowerMsg.includes('thumbnail')) {
+                if(lowerMsg.includes('design') || lowerMsg.includes('graphic') || lowerMsg.includes('thumbnail')) {
                     aiResponse = "STS Design system me 30 total trending matrix blueprint set ho chuke hain, jo portfolio grids par real-time dynamic sync maps show kar rahe hain.";
                 } else if(lowerMsg.includes('secure') || lowerMsg.includes('security')) {
-                     aiResponse = "Hamara tracker system transmission logs ko directly browser telemetry memory parameters framework me block / parse karta hai.";
+                    aiResponse = "Hamara tracker system transmission logs ko directly browser telemetry memory parameters framework me block / parse karta hai.";
                 } else if(lowerMsg.includes('contact') || lowerMsg.includes('form')) {
                     aiResponse = "Aap form fill kar ke packet safely route transmission registers me register karwa sakte hain.";
                 }
@@ -1241,17 +1237,18 @@
                 message: message
             };
 
-            emailjs.send(MY_EMAILJS_SERVICE_ID, MY_EMAILJS_TEMPLATE_ID, templateParams)
+            // Fixed v4 SDK Direct Delivery execution logic pass
+            emailjs.send(MY_EMAILJS_SERVICE_ID, MY_EMAILJS_TEMPLATE_ID, templateParams, MY_EMAILJS_PUBLIC_KEY)
                 .then(function(response) {
                     systemLogs.push(newLog);
                     localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
                     renderLogsInOffice();
                     document.getElementById('secureForm').reset();
                     renderLivePreview();
-                    alert("Success! Packet completely transmitted via EmailJS and stored in local stream logs.");
+                    alert("Success! Packet completely transmitted via EmailJS.");
                 }, function(error) {
                     console.log("EmailJS Error: ", error);
-                    alert("Transmission failed. Please check your EmailJS dashboard settings.");
+                    alert("EmailJS Delivery Failed!\nReason: " + (error.text || JSON.stringify(error)) + "\n\nTip: Make sure variables like {{from_name}}, {{from_email}}, and {{message}} exist in your template dashboard settings.");
                 });
         }
 
@@ -1270,7 +1267,7 @@
                     </div>
                     <button class="delete-msg-btn" onclick="deleteLogEntry(${log.id}, event)">X</button>
                 `;
-                 stream.appendChild(div);
+                stream.appendChild(div);
             });
         }
 
@@ -1330,13 +1327,13 @@
                 message: text
             };
 
-            emailjs.send(MY_EMAILJS_SERVICE_ID, MY_EMAILJS_TEMPLATE_ID, templateParams)
+            emailjs.send(MY_EMAILJS_SERVICE_ID, MY_EMAILJS_TEMPLATE_ID, templateParams, MY_EMAILJS_PUBLIC_KEY)
                 .then(function(response) {
                     alert("Transmission successfully delivered via routing email to " + selectedLogForReply.email);
                     document.getElementById('replyTextarea').value = '';
                 }, function(error) {
                     console.log("EmailJS Error: ", error);
-                    alert("Error sending reply message. Verify if parameters match your template configuration.");
+                    alert("Reply Delivery Failed!\nReason: " + (error.text || JSON.stringify(error)));
                 });
         }
     </script>
