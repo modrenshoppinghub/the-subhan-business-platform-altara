@@ -1,14 +1,13 @@
 my-project/
-├── api/                  <-- (ZAROORI) Backend Serverless Functions
-│   ├── login.js          <-- Login API logic (Vercel handler)
-│   └── user.js           <-- User Profile API logic
-├── public/               <-- Static files (Assets, Icons)
+├── api/
+│   ├── login.js
+│   ├── user.js
+│   └── update-code.js    <-- (NAYA) AI Assistant aur Code update route
+├── public/
 │   └── favicon.ico
-├── src/                  <-- Frontend React Code
-│   ├── components/       <-- Reusable UI elements (Navbar, Button, etc.)
-│   ├── pages/            <-- Webpages (Login.jsx, Dashboard.jsx)
-│   ├── App.jsx           <-- Main Frontend Routing / Layout
-│   └── main.jsx          <-- React Entry Point
-├── index.html            <-- Main HTML file for Vite
-├── package.json          <-- Project ki requirements aur scripts
-└── vercel.json           <-- (ZAROORI) Vercel Routing Configuration
+├── src/
+│   ├── App.jsx           <-- Updated with 20 Trending Skills & AI Guide
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vercel.json
