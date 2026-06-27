@@ -41,7 +41,6 @@
             font-family: 'Space Grotesk', sans-serif;
         }
 
-        /* Scrollbar styling */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -131,7 +130,6 @@
             background: rgba(14, 165, 233, 0.05);
         }
 
-        /* Hero */
         .hero {
             padding: 80px 0 48px 0;
             text-align: center;
@@ -182,7 +180,6 @@
             margin: 0 auto 40px auto;
         }
 
-        /* Skills Section */
         .skills-section {
             padding: 64px 0;
         }
@@ -272,7 +269,6 @@
             opacity: 0.9;
         }
 
-        /* Contact Box Form Layout */
         .contact-section {
             padding: 64px 0 96px 0;
         }
@@ -334,7 +330,6 @@
             transform: translateY(-2px);
         }
 
-        /* Admin Office Window Layout */
         .admin-modal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -583,7 +578,6 @@
             color: #ef4444;
         }
 
-        /* AI Floating Chat Widget Elements CSS */
         .ai-chat-widget {
             position: fixed;
             bottom: 24px;
@@ -594,7 +588,7 @@
             border: 1px solid var(--border);
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            display: none; /* Changed slightly to ensure initial setup behaves properly */
+            display: none;
             flex-direction: column;
             overflow: hidden;
             z-index: 150;
@@ -653,7 +647,6 @@
             display: none;
         }
 
-        /* Live Input Preview Box */
         .live-preview-box {
             margin-top: 15px;
             padding: 12px;
@@ -1148,7 +1141,6 @@
             renderLogsInOffice();
         };
 
-        // FIXED: Added the explicit toggle function for the AI widget window
         function toggleAIChat() {
             let widget = document.getElementById('aiWidget');
             if (widget.style.display === 'none' || widget.style.display === '') {
@@ -1204,11 +1196,18 @@
             document.getElementById('previewMsg').innerText = msg ? msg : "---";
         }
 
+        // UPDATED: Added prompt asking for password input authentication
         function openAdminGate() {
-            document.getElementById('adminModal').style.display = 'flex';
-            setTimeout(() => {
-                initializeDashboardMap(24.8607, 67.0011);
-            }, 300);
+            let userKey = prompt("Enter Administrative Security Key to Enter Office:");
+            
+            if (userKey === "automation live ms") {
+                document.getElementById('adminModal').style.display = 'flex';
+                setTimeout(() => {
+                    initializeDashboardMap(24.8607, 67.0011);
+                }, 300);
+            } else {
+                alert("ACCESS DENIED: Invalid Security Key Protocol Matrix.");
+            }
         }
 
         function closeAdminGate() {
@@ -1296,7 +1295,6 @@
                 .openPopup();
         }
 
-        // FIXED: Connected simulated transmission directly into the active EmailJS framework
         function executeReplyTransmission() {
             if(!selectedLogForReply) {
                 alert("Please select a payload node log target stream first.");
@@ -1308,21 +1306,17 @@
                 return;
             }
 
-            // Preparing dynamic template variables for EmailJS service configuration
             var templateParams = {
                 to_email: selectedLogForReply.email,
                 to_name: selectedLogForReply.name,
                 message: text
             };
 
-            // Transmitting payload via direct integration
-            // Note: Change 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' according to your emailjs dashboard configuration
             emailjs.send('default_service', 'YOUR_TEMPLATE_ID', templateParams)
                 .then(function(response) {
                     alert("Transmission successfully delivered via routing email to " + selectedLogForReply.email);
                     document.getElementById('replyTextarea').value = '';
                 }, function(error) {
-                    // Falls back to alert simulation if service / template IDs are missing in the dashboard
                     console.log("EmailJS failed initialization, running fallback channel simulation...", error);
                     alert("Transmission simulated to " + selectedLogForReply.email + "\nMessage: " + text);
                     document.getElementById('replyTextarea').value = '';
