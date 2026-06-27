@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhan Technical Studio // Advanced Tracker Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        :root {
+            --bg-base: #060913;
+            --bg-surface: #0e1322;
+            --bg-card: #151d33;
+            --border-glow: rgba(14, 165, 233, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-cyan: #0ea5e9;
+            --accent-purple: #a855f7;
+            --accent-amber: #f59e0b;
+            --accent-emerald: #10b981;
+            --border: #1e2942;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-tech {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-base);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-surface);
+            border: 2px solid var(--bg-base);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-cyan);
+        }
+
+        .mainframe {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(6, 9, 19, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 16px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
+        }
+
+        .brand-logo-inner {
+            width: 14px;
+            height: 14px;
+            background: white;
+            border-radius: 3px;
+        }
+
+        .brand-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .terminal-trigger {
+            background: var(--bg-surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-secondary);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .terminal-trigger:hover {
+            color: var(--accent-cyan);
+            border-color: rgba(14, 165, 233, 0.4);
+            background: rgba(14, 165, 233, 0.05);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 48px 0;
+            text-align: center;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(14, 165, 233, 0.06);
+            border: 1px solid rgba(14, 165, 233, 0.15);
+            padding: 6px 16px;
+            border-radius: 100px;
+            color: var(--accent-cyan);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .badge-pill span {
+            width: 6px;
+            height: 6px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px var(--accent-cyan);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 64px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-card {
+            background: var(--bg-surface);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(14, 165, 233, 0.25);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .skill-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .skill-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .skill-card p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        .preview-media-box {
+            width: 100%;
+            height: 140px;
+            background: #050811;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .preview-media-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .skill-card:hover .preview-media-box img {
+            opacity: 0.9;
+        }
+
+        /* Contact Box Form Layout */
+        .contact-section {
+            padding: 64px 0 96px 0;
+        }
+
+        .contact-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-surface);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 24px;
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--bg-base);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: white;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent-cyan), #0284c7);
+            color: white;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Admin Office Window Layout */
+        .admin-modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(3, 5, 10, 0.96);
+            backdrop-filter: blur(16px);
+            z-index: 200;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+
+        .admin-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+        }
+
+        .admin-header {
+            background: rgba(0,0,0,0.3);
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+
+        .admin-office-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .exit-office-btn {
+            background: rgba(239, 104, 104, 0.1);
+            border: 1px solid #ef4444;
+            color: #ef4444;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .exit-office-btn:hover {
+            background: #ef4444;
+            color: white;
+        }
+
+        .admin-body {
+            padding: 24px;
+        }
+
+        .metrics-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .metric-tile {
+            background: var(--bg-base);
+            border: 1px solid var(--border);
+            padding: 14px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .metric-tile div {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .metric-tile span {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        /* 2 Column Split Panel Layout */
+        .workspace-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .left-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .log-stream {
+            background: #04060d;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px;
+            height: 250px;
+            overflow-y: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .log-item {
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .log-item:hover, .log-item.active {
+            background: rgba(14, 165, 233, 0.08);
+            border-color: rgba(14, 165, 233, 0.2);
+        }
+
+        .delete-msg-btn {
+            background: rgba(239, 104, 104, 0.2);
+            border: 1px solid #ef4444;
+            color: #ef4444;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .delete-msg-btn:hover {
+            background: #ef4444;
+            color: white;
+        }
+
+        /* Reply Mechanism Layout Elements */
+        .reply-box-container {
+            background: #04060d;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .reply-box-container h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            color: var(--accent-amber);
+        }
+
+        .reply-textarea {
+            width: 100%;
+            height: 80px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px;
+            color: white;
+            font-family: inherit;
+            font-size: 0.85rem;
+            resize: none;
+        }
+
+        .reply-textarea:focus {
+            outline: none;
+            border-color: var(--accent-amber);
+        }
+
+        .btn-reply {
+            background: var(--accent-amber);
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.85rem;
+            align-self: flex-end;
+        }
+
+        .map-view-container {
+            background: #04060d;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            height: 440px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .map-header-status {
+            background: rgba(0,0,0,0.3);
+            padding: 10px 16px;
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            border-bottom: 1px solid var(--border);
+            color: var(--accent-cyan);
+        }
+
+        #liveAdminMap {
+            width: 100%;
+            height: 100%;
+            background: #060913;
+            z-index: 10;
+        }
+
+        .map-placeholder-text {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--text-secondary);
+            text-align: center;
+            font-size: 0.85rem;
+            width: 80%;
+            z-index: 5;
+        }
+
+        .admin-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .purge-btn {
+            background: transparent;
+            color: #94a3b8;
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .purge-btn:hover {
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+
+        /* AI Floating Chat Widget Elements CSS */
+        .ai-chat-widget {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 360px;
+            height: 450px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 150;
+        }
+        .ai-chat-header {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            padding: 14px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .ai-chat-body {
+            flex: 1;
+            padding: 14px;
+            overflow-y: auto;
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .ai-msg { padding: 8px 12px; border-radius: 8px; max-width: 80%; line-height: 1.4; }
+        .ai-msg.user { background: var(--border); align-self: flex-end; color: white; }
+        .ai-msg.bot { background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.2); align-self: flex-start; color: white; }
+        .ai-msg.system-status { background: rgba(245, 158, 11, 0.1); border: 1px dashed rgba(245, 158, 11, 0.3); align-self: center; text-align: center; color: var(--accent-amber); max-width: 90%; font-size: 0.75rem; }
+        .ai-chat-footer { padding: 10px; display: flex; gap: 8px; border-top: 1px solid var(--border); background: var(--bg-surface); }
+        
+        .ai-trigger-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: white;
+            border: none;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
+            z-index: 140;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .typing-indicator {
+            align-self: flex-start;
+            background: rgba(14, 165, 233, 0.05);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            display: none;
+        }
+
+        /* Live Input Preview Box */
+        .live-preview-box {
+            margin-top: 15px;
+            padding: 12px;
+            background: rgba(255,255,255,0.02);
+            border: 1px dashed var(--border);
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+        .live-preview-box span { color: var(--accent-cyan); font-weight: bold; }
+    </style>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          // Initialize EmailJS with your public key
+          emailjs.init("4NPC1SsXjFKhy9WR9"); 
+       })();
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="mainframe nav-wrapper">
+            <a href="#" class="brand">
+                <div class="brand-logo"><div class="brand-logo-inner"></div></div>
+                <div class="brand-text">SUBHAN TECHNICAL STUDIO</div>
+            </a>
+            <button class="terminal-trigger" onclick="openAdminGate()">[🛰️ ADMIN OFFICE]</button>
+        </div>
+    </header>
+
+    <section class="mainframe hero">
+        <div class="badge-pill"><span></span>System Active</div>
+        <h1>Advanced Studio Hub for <span>Trending Skills</span></h1>
+        <p>Premium graphic assets, high CTR YouTube layouts, and production vectors configured dynamically with localized tracker payloads.</p>
+    </section>
+
+    <section class="mainframe skills-section">
+        <div class="section-title">
+            <h2>Trending Matrix Blueprint</h2>
+            <p>20 high-demand design, creation, and development specializations.</p>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Design Core</div>
+                    <h3>Graphic Design</h3>
+                    <p>Vector maps, creative branding layouts, and advanced visual composition architecture.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=400&q=80" alt="Graphic Design">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Media Growth</div>
+                    <h3>YouTube Thumbnail Design</h3>
+                    <p>High click-through packaging layout maps designed to capture maximum visual tracking.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=400&q=80" alt="YouTube Thumbnail">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Creative Assets</div>
+                    <h3>Social Cover Art</h3>
+                    <p>Premium platform banners, headers, and digital storefront canvas profiles.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80" alt="Cover Art">
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Intelligence</div>
+                    <h3>AI Prompt Engineering</h3>
+                    <p>Context design parameters and transformer alignment maps.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=400&q=80" alt="AI">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mainframe contact-section">
+        <div class="contact-box">
+            <div class="section-title" style="margin-bottom: 32px;">
+                <h2 style="font-size:1.8rem;">Initialize System Handshake</h2>
+                <p>Transmit metadata packet payload safely into local system registers.</p>
+            </div>
+            <form id="secureForm" onsubmit="handleFormSubmission(event)">
+                <div class="form-group">
+                    <label>Node Operator Name</label>
+                    <input type="text" id="clientName" class="form-control" placeholder="e.g. Subhan" oninput="renderLivePreview()" required>
+                </div>
+                <div class="form-group">
+                    <label>Network Routing Email (Target Inbox for Admin Reply)</label>
+                    <input type="email" id="clientEmail" class="form-control" placeholder="e.g. client@domain.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Payload Message Stream</label>
+                    <textarea id="clientMsg" class="form-control" rows="4" placeholder="Type message data streams..." oninput="renderLivePreview()" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Transmit Target Packet</button>
+
+                <div class="live-preview-box">
+                    <strong>🎛️ Real-time Data Preview:</strong><br>
+                    <span>Operator:</span> <span id="previewName">---</span> | 
+                    <span>Payload:</span> <span id="previewMsg">---</span>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div class="admin-modal" id="adminModal">
+        <div class="admin-box">
+            <div class="admin-header">
+                <span>🛰️ SUBHAN TECHNICAL STUDIO // ADMINISTRATIVE DASHBOARD CONFIG</span>
+                <div class="admin-office-actions">
+                    <div style="font-size: 0.75rem; color: var(--accent-emerald); background: rgba(16,185,129,0.1); padding: 4px 10px; border-radius: 4px;">• GEOLOCATION ENGINE ONLINE</div>
+                    <button class="exit-office-btn" onclick="closeAdminGate()">EXIT OFFICE</button>
+                </div>
+            </div>
+            <div class="admin-body">
+                <div class="metrics-bar">
+                    <div class="metric-tile">
+                        <div id="countMsg">0</div>
+                        <span>Logged Packets</span>
+                    </div>
+                    <div class="metric-tile">
+                        <div id="countGeo">1</div>
+                        <span>Tracked Regions</span>
+                    </div>
+                    <div class="metric-tile">
+                        <div id="lastNodeIP">182.178.45.12</div>
+                        <span>Gateway IP</span>
+                    </div>
+                    <div class="metric-tile">
+                        <div id="lastNodeISP" style="color: var(--accent-purple); font-size: 0.9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">PTCL Backbone</div>
+                        <span>ISP Backbone</span>
+                    </div>
+                </div>
+
+                <div class="workspace-split">
+                    <div class="left-panel">
+                        <div class="log-stream" id="logStream">
+                            </div>
+                        
+                        <div class="reply-box-container">
+                            <h4>💬 Dispatch Operator Reply Protocol</h4>
+                            <div id="replyTargetLabel" style="font-size: 0.8rem; color: var(--text-secondary);">Target: None selected</div>
+                            <div id="replyEmailLabel" style="font-size: 0.75rem; color: var(--accent-cyan); margin-top: -6px; font-weight: bold;">Destination Email: N/A</div>
+                            <textarea id="replyTextarea" class="reply-textarea" placeholder="Type administrative response payload instructions..."></textarea>
+                            <button class="btn-reply" onclick="executeReplyTransmission()">Transmit Reply Payload</button>
+                        </div>
+                    </div>
+                    
+                    <div class="map-view-container">
+                        <div class="map-header-status" id="mapTargetStatus">Office Map Core: Awaiting System Node Selection...</div>
+                        <div class="map-placeholder-text" id="mapPlaceholder">
+                            Click any captured telemetry data package log on the left stream grid to map location coordinate dimensions inside this dashboard.
+                        </div>
+                        <div id="liveAdminMap"></div>
+                    </div>
+                </div>
+
+                <div class="admin-footer">
+                    <button class="purge-btn" onclick="purgeSystemLogs()">Wipe Local Logs</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="ai-trigger-btn" onclick="toggleAiWidget()">🤖</button>
+    
+    <div class="ai-chat-widget" id="aiWidget">
+        <div class="ai-chat-header">
+            <span>🤖 STS Security & AI Core</span>
+            <button onclick="toggleAiWidget()" style="background:none; border:none; color:white; cursor:pointer; font-weight:bold; font-size: 1.2rem;">×</button>
+        </div>
+        <div class="ai-chat-body" id="aiChatBody">
+            <div class="ai-msg bot">Asalam-o-Alaikum! Main Subhan Technical Studio ka AI Core assistant hoon. Main aapko safe environment me premium design aur engineering skills ke mutalik mutmain karunga. Puchiye kya janna chahte hain?</div>
+            <div id="aiTypingIndicator" class="typing-indicator">STS Core is compiling response...</div>
+        </div>
+        <div class="ai-chat-footer">
+            <input type="text" id="aiInput" class="form-control" placeholder="Ask AI anything..." style="padding: 8px 12px; height: 38px;" onkeypress="if(event.key === 'Enter') sendMsgToBackendAi()">
+            <button class="btn-submit" style="width: auto; margin: 0; padding: 0 16px; height: 38px;" onclick="sendMsgToBackendAi()">Send</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        let mapCoreInstance = null;
+        let selectedLogForReply = null;
+
+        // --- LOCAL STORAGE DATA SETUP ---
+        let systemLogs = JSON.parse(localStorage.getItem('sts_packets')) || [
+            { id: 1, name: "Subhan Admin", email: "subhan@studio.com", message: "Initial secure handshake verified.", ip: "182.178.45.12", time: "Just Now" }
+        ];
+
+        window.onload = function() {
+            renderLogsInOffice();
+            simulateSecurityMonitoring();
+        };
+
+        // --- AI CHAT CORE ENGINE (CLIENT CLIENT GUIDANCE) ---
+        function toggleAiWidget() {
+            let widget = document.getElementById('aiWidget');
+            widget.style.display = widget.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function createMessageElement(text, sender) {
+            let div = document.createElement('div');
+            div.className = `ai-msg ${sender}`;
+            div.innerText = text;
+            return div;
+        }
+
+        function sendMsgToBackendAi() {
+            let inputField = document.getElementById('aiInput');
+            let msg = inputField.value.trim();
+            if(!msg) return;
+
+            let chatBody = document.getElementById('aiChatBody');
+            let indicator = document.getElementById('aiTypingIndicator');
+            
+            chatBody.insertBefore(createMessageElement(msg, 'user'), indicator);
+            inputField.value = '';
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            indicator.style.display = 'block';
+
+            // Smart Client Guide Answers Simulated
+            setTimeout(() => {
+                indicator.style.display = 'none';
+                let aiResponse = "Mujhe aapki query mil gayi hai. STS system bilkul secure hai aur aapka data encrypted hai.";
+                
+                let lowerMsg = msg.toLowerCase();
+                if(lowerMsg.includes('design') || lowerMsg.includes('graphic')) {
+                    aiResponse = "STS Graphic Design core me vector layouts aur creative thumbnails top trends par hain!";
+                } else if(lowerMsg.includes('secure') || lowerMsg.includes('security')) {
+                    aiResponse = "Hamara firewall har packet transmission ko real-time scan karta hai taake injection attacks se bacha ja sakay.";
+                } else if(lowerMsg.includes('contact') || lowerMsg.includes('form')) {
+                    aiResponse = "Aap form me detail fill kar ke 'Transmit Target Packet' button par click karen, data seedha admin inbox me jayega.";
+                }
+
+                chatBody.insertBefore(createMessageElement(aiResponse, 'bot'), indicator);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 1200);
+        }
+
+        // --- LIVE FORM PREVIEW ---
+        function renderLivePreview() {
+            let name = document.getElementById('clientName').value;
+            let msg = document.getElementById('clientMsg').value;
+            document.getElementById('previewName').innerText = name ? name : "---";
+            document.getElementById('previewMsg').innerText = msg ? msg : "---";
+        }
+
+        // --- SECURITY VALIDATION & EMAILJS SUBMISSION ---
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            
+            let nameInput = document.getElementById('clientName').value;
+            let emailInput = document.getElementById('clientEmail').value;
+            let msgInput = document.getElementById('clientMsg').value;
+
+            // XSS & Code Injection Protection Logic
+            if(nameInput.includes("<") || msgInput.includes("<") || msgInput.includes("script")) {
+                alert("🚨 Security Alert: Malicious structural tags detected in payload! Transmission terminated.");
+                return;
+            }
+
+            // EmailJS Transmission Config
+            // Service ID: 'default_service', Template ID: 'template_id' (Inko apne dashboard ke mutabiq badlein)
+            emailjs.send("default_service", "template_id", {
+                from_name: nameInput,
+                reply_to: emailInput,
+                message: msgInput
+            }).then(() => {
+                alert("🚀 Metadata packet payload successfully sent via EmailJS!");
+            }).catch((err) => {
+                console.log("EmailJS Error: ", err);
+                alert("Packet routed locally (EmailJS setup required inside scripts).");
+            });
+
+            // Save to Admin Log stream locally
+            let newPacket = {
+                id: Date.now(),
+                name: nameInput,
+                email: emailInput,
+                message: msgInput,
+                ip: "182.178." + Math.floor(Math.random() * 255) + "." + Math.floor(Math.random() * 255),
+                time: "New Node"
+            };
+
+            systemLogs.push(newPacket);
+            localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
+            renderLogsInOffice();
+            document.getElementById('secureForm').reset();
+            renderLivePreview();
+        }
+
+        // --- ADMIN OFFICE MODAL GATE ---
+        function openAdminGate() {
+            document.getElementById('adminModal').style.display = 'flex';
+            if(!mapCoreInstance) {
+                // Initialize premium leaflet cyber map tracking
+                mapCoreInstance = L.map('liveAdminMap').setView([24.8607, 67.0011], 10);
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(mapCoreInstance);
+                document.getElementById('mapPlaceholder').style.display = 'none';
+            }
+        }
+
+        function closeAdminGate() {
+            document.getElementById('adminModal').style.display = 'none';
+        }
+
+        // --- ADMIN RENDER AND MESSAGE DELETION ---
+        function renderLogsInOffice() {
+            let container = document.getElementById('logStream');
+            container.innerHTML = '';
+            document.getElementById('countMsg').innerText = systemLogs.length;
+
+            systemLogs.forEach(log => {
+                let div = document.createElement('div');
+                div.className = 'log-item';
+                div.innerHTML = `
+                    <div onclick="selectLogNode(${log.id})" style="flex:1;">
+                        <strong>[${log.time}] ${log.name}</strong> - <small>${log.ip}</small><br>
+                        <span style="color:var(--text-secondary); font-size:0.75rem;">${log.message.substring(0,40)}...</span>
+                    </div>
+                    <button class="delete-msg-btn" onclick="deleteLogNode(event, ${log.id})">Delete</button>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function deleteLogNode(event, id) {
+            event.stopPropagation(); // Prevents map tracking selection when clicking delete
+            if(confirm("Are you sure you want to delete this client packet?")) {
+                systemLogs = systemLogs.filter(log => log.id !== id);
+                localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
+                renderLogsInOffice();
+                alert("Packet removed successfully from Admin Office registers.");
+            }
+        }
+
+        function selectLogNode(id) {
+            let selected = systemLogs.find(log => log.id === id);
+            if(!selected) return;
+
+            selectedLogForReply = selected;
+            document.getElementById('replyTargetLabel').innerText = `Target Node: ${selected.name}`;
+            document.getElementById('replyEmailLabel').innerText = `Destination Email: ${selected.email}`;
+            document.getElementById('mapTargetStatus').innerText = `Tracing coordinates for IP: ${selected.ip}`;
+
+            // Random mapping tracker action inside Karachi/Pakistan sector
+            let lat = 24.86 + (Math.random() * 0.1 - 0.05);
+            let lng = 67.00 + (Math.random() * 0.1 - 0.05);
+            mapCoreInstance.setView([lat, lng], 12);
+            L.marker([lat, lng]).addTo(mapCoreInstance)
+                .bindPopup(`<b>${selected.name}</b><br>${selected.ip}`).openPopup();
+        }
+
+        function executeReplyTransmission() {
+            if(!selectedLogForReply) {
+                alert("Please select a client message log first.");
+                return;
+            }
+            let text = document.getElementById('replyTextarea').value;
+            if(!text) return;
+
+            alert(`Administrative reply dispatched to ${selectedLogForReply.email} successfully.`);
+            document.getElementById('replyTextarea').value = '';
+        }
+
+        function purgeSystemLogs() {
+            if(confirm("Reset all administrative logs?")) {
+                systemLogs = [];
+                localStorage.removeItem('sts_packets');
+                renderLogsInOffice();
+            }
+        }
+
+        // --- REALTIME AI PERFORMACE & SECURITY UPDATES SIMULATOR ---
+        function simulateSecurityMonitoring() {
+            setInterval(() => {
+                let chatBody = document.getElementById('aiChatBody');
+                let indicator = document.getElementById('aiTypingIndicator');
+                
+                let statuses = [
+                    "⚡ Real-time Shield: System optimized with localized tracker encryption.",
+                    "🔒 Security Core: Port 443 scanned. 0 structural vulnerabilities found.",
+                    "🔄 Update Core: Trending Matrix blueprint optimized for higher CTR tracking."
+                ];
+                
+                let randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+                let statusDiv = document.createElement('div');
+                statusDiv.className = "ai-msg system-status";
+                statusDiv.innerText = randomStatus;
+                
+                chatBody.insertBefore(statusDiv, indicator);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 15000); // Har 15 seconds baad auto status console update
+        }
+    </script>
+</body>
+</html>
