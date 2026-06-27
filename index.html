@@ -820,6 +820,7 @@
 
         function closeAdminGate() { document.getElementById('adminModal').style.display = 'none'; }
 
+        // REMOVED e.preventDefault() SO FORMSPREE ACTION CAN EXECUTE NATURALLY
         function saveToLocalLogs(e) {
             let name = document.getElementById('clientName').value;
             let email = document.getElementById('clientEmail').value;
@@ -884,6 +885,7 @@
             L.marker([lat, lng]).addTo(mapCoreInstance).bindPopup('Node Signal Found.').openPopup();
         }
 
+        // FIXED AMPERSAND AND PROTOCOL FOR DISPATCH REPLY
         function executeReplyTransmission() {
             if(!selectedLogForReply) {
                 alert("Please select a payload node log target stream first.");
@@ -897,7 +899,7 @@
 
             let subject = encodeURIComponent("Reply from Subhan Technical Studio");
             let body = encodeURIComponent(text);
-            window.location.href = `mailto:${selectedLogForReply.email}?subject=${subject}?body=${body}`;
+            window.location.href = `mailto:${selectedLogForReply.email}?subject=${subject}&body=${body}`;
 
             document.getElementById('replyTextarea').value = '';
         }
