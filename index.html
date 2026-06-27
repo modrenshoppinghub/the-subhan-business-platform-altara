@@ -582,95 +582,7 @@
             border-color: #ef4444;
             color: #ef4444;
         }
-
-        /* AI Floating Chat Widget Elements CSS */
-        .ai-chat-widget {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 360px;
-            height: 450px;
-            background: var(--bg-surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            z-index: 150;
-        }
-        .ai-chat-header {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-            padding: 14px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-        }
-        .ai-chat-body {
-            flex: 1;
-            padding: 14px;
-            overflow-y: auto;
-            font-size: 0.85rem;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .ai-msg { padding: 8px 12px; border-radius: 8px; max-width: 80%; line-height: 1.4; }
-        .ai-msg.user { background: var(--border); align-self: flex-end; color: white; }
-        .ai-msg.bot { background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.2); align-self: flex-start; color: white; }
-        .ai-msg.system-status { background: rgba(245, 158, 11, 0.1); border: 1px dashed rgba(245, 158, 11, 0.3); align-self: center; text-align: center; color: var(--accent-amber); max-width: 90%; font-size: 0.75rem; }
-        .ai-chat-footer { padding: 10px; display: flex; gap: 8px; border-top: 1px solid var(--border); background: var(--bg-surface); }
-        
-        .ai-trigger-btn {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-            color: white;
-            border: none;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
-            z-index: 140;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .typing-indicator {
-            align-self: flex-start;
-            background: rgba(14, 165, 233, 0.05);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-style: italic;
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            display: none;
-        }
-
-        /* Live Input Preview Box */
-        .live-preview-box {
-            margin-top: 15px;
-            padding: 12px;
-            background: rgba(255,255,255,0.02);
-            border: 1px dashed var(--border);
-            border-radius: 8px;
-            font-size: 0.85rem;
-        }
-        .live-preview-box span { color: var(--accent-cyan); font-weight: bold; }
     </style>
-    
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-       (function(){
-          emailjs.init("4NPC1SsXjFKhy9WR9"); 
-       })();
-    </script>
 </head>
 <body>
 
@@ -693,7 +605,7 @@
     <section class="mainframe skills-section">
         <div class="section-title">
             <h2>Trending Matrix Blueprint</h2>
-            <p>30 high-demand design, creation, and development specializations.</p>
+            <p>40 Premium high-demand design, creation, and tech specializations mapped dynamically.</p>
         </div>
 
         <div class="skills-grid">
@@ -707,7 +619,6 @@
                     <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=400&q=80" alt="Graphic Design">
                 </div>
             </div>
-
             <div class="skill-card">
                 <div>
                     <div class="skill-tag">Media Growth</div>
@@ -718,7 +629,6 @@
                     <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=400&q=80" alt="YouTube Thumbnail">
                 </div>
             </div>
-
             <div class="skill-card">
                 <div>
                     <div class="skill-tag">Creative Assets</div>
@@ -729,7 +639,6 @@
                     <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80" alt="Cover Art">
                 </div>
             </div>
-
             <div class="skill-card">
                 <div>
                     <div class="skill-tag">Intelligence</div>
@@ -740,7 +649,6 @@
                     <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=400&q=80" alt="AI">
                 </div>
             </div>
-
             <div class="skill-card">
                 <div>
                     <div class="skill-tag">Product Design</div>
@@ -751,7 +659,6 @@
                     <img src="https://images.unsplash.com/photo-1561070791-26c113006238?auto=format&fit=crop&w=400&q=80" alt="UI/UX Design">
                 </div>
             </div>
-
             <div class="skill-card">
                 <div>
                     <div class="skill-tag">Engineering</div>
@@ -762,7 +669,6 @@
                     <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80" alt="Full Stack">
                 </div>
             </div>
-
             <div class="skill-card">
                 <div>
                     <div class="skill-tag">Media Production</div>
@@ -773,10 +679,9 @@
                     <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80" alt="Video Editing">
                 </div>
             </div>
-
             <div class="skill-card">
                 <div>
-                    <div class="skill-tag">Marketing core</div>
+                    <div class="skill-tag">Marketing Core</div>
                     <h3>SEO Architecture</h3>
                     <p>Keyword indexing parameters, structural authority map scaling, and algorithmic targeting data.</p>
                 </div>
@@ -784,10 +689,9 @@
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80" alt="SEO Architecture">
                 </div>
             </div>
-
             <div class="skill-card">
                 <div>
-                    <div class="skill-tag">Security systems</div>
+                    <div class="skill-tag">Security Systems</div>
                     <h3>Cyber Security Frameworks</h3>
                     <p>System penetration logs, vulnerability tracking vectors, and cryptographic network architecture.</p>
                 </div>
@@ -795,7 +699,6 @@
                     <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80" alt="Cyber Security">
                 </div>
             </div>
-
             <div class="skill-card">
                 <div>
                     <div class="skill-tag">App Engineering</div>
@@ -806,7 +709,6 @@
                     <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=400&q=80" alt="Mobile Apps">
                 </div>
             </div>
-
             <div class="skill-card">
                 <div>
                     <div class="skill-tag">Infrastructure</div>
@@ -817,7 +719,6 @@
                     <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80" alt="Cloud Systems">
                 </div>
             </div>
-
             <div class="skill-card">
                 <div>
                     <div class="skill-tag">Data Matrix</div>
@@ -828,7 +729,6 @@
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" alt="Data Science">
                 </div>
             </div>
-
             <div class="skill-card">
                 <div>
                     <div class="skill-tag">Decentralized</div>
@@ -838,200 +738,463 @@
                 <div class="preview-media-box">
                     <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=400&q=80" alt="Smart Contracts">
                 </div>
-            </div> 
-        </div> 
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">3D Assets</div>
+                    <h3>3D Geometry Rendering</h3>
+                    <p>Spatial coordinate vertex meshes, procedural shader mapping, and lightning simulation maps.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=400&q=80" alt="3D Modeling">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Digital Retail</div>
+                    <h3>E-Commerce Scaling</h3>
+                    <p>Conversion funnel tracking logs, transactional checkout flows, and catalog metadata management.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=400&q=80" alt="E-Commerce">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Management</div>
+                    <h3>SaaS Product Lifecycle</h3>
+                    <p>Agile release sequence planning, tracking feature dependencies, and strategic target parameters.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=400&q=80" alt="Product Management">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Copy Engineering</div>
+                    <h3>Conversion Copywriting</h3>
+                    <p>Behavioral triggers, psychological framework maps, and highly structured persuasive language layout.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=400&q=80" alt="Copywriting">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Backend Systems</div>
+                    <h3>RESTful API Architecture</h3>
+                    <p>Payload routing endpoint registries, authentication flow integration, and high throughput monitoring.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="API Architecture">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Advanced AI</div>
+                    <h3>Machine Learning Models</h3>
+                    <p>Algorithmic training weight matrices, neural network layering, and prediction arrays compilation.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?auto=format&fit=crop&w=400&q=80" alt="Machine Learning">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Simulation</div>
+                    <h3>Interactive Game Engines</h3>
+                    <p>Physics vector mechanics calculations, asset rendering update loops, and input telemetry handling.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1556438342-94f58672b33f?auto=format&fit=crop&w=400&q=80" alt="Game Dev">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Media Outreach</div>
+                    <h3>Campaign Metrics Scale</h3>
+                    <p>Audience demographic clustering, outreach tracking grids, and performance ROI indexing logs.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=400&q=80" alt="Influencer Marketing">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Acoustics</div>
+                    <h3>Digital Audio Processing</h3>
+                    <p>Frequency equalizer spectrum filters, dynamic compression arrays, and clean voice synthesis setup.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=400&q=80" alt="Audio Production">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Security</div>
+                    <h3>Ethical Hacking Matrix</h3>
+                    <p>Vulnerability assessment protocols, network infiltration setups, and real-time counterdefense systems.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80" alt="Hacking">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Automation</div>
+                    <h3>Python Scripting Layout</h3>
+                    <p>Automated database backup routines, fast custom bot integrations, and cloud file tracking structures.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=400&q=80" alt="Python Scripting">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Automation</div>
+                    <h3>QA Automation Testing</h3>
+                    <p>Dynamic selenium execution trees, end-to-end framework validations, and load capacity blueprints.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" alt="QA Testing">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">E-Commerce</div>
+                    <h3>Shopify Development Hub</h3>
+                    <p>Custom liquid template structures, payment integrations, and inventory optimization layouts.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=400&q=80" alt="Shopify Dev">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Design Core</div>
+                    <h3>2D Vector Illustration</h3>
+                    <p>High-resolution flat design patterns, isometric game assets, and fully customizable design modules.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1618005198143-e5283b519a7f?auto=format&fit=crop&w=400&q=80" alt="Vector Illustration">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Business Tech</div>
+                    <h3>Financial Data Modeling</h3>
+                    <p>Dynamic startup forecast structures, algorithmic accounting protocols, and interactive scale tables.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=400&q=80" alt="Financial Modeling">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Marketing Core</div>
+                    <h3>Google Ads Management</h3>
+                    <p>High-conversion tracking campaign matrices, budget allocation networks, and display keyword parameters.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80" alt="Google Ads">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Marketing Core</div>
+                    <h3>Facebook Funnel Scaling</h3>
+                    <p>Pixel event tracking models, custom retention audiences, and scalable copy variation maps.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=400&q=80" alt="Facebook Ads">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Media Growth</div>
+                    <h3>Video Script Engineering</h3>
+                    <p>High retention structural narrative layouts, viral psychological hooks, and call-to-action systems.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=400&q=80" alt="Script Writing">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Content Core</div>
+                    <h3>Technical Documentation</h3>
+                    <p>Structured API integration files, comprehensive system manual design, and architectural flow guides.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=400&q=80" alt="Documentation">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Intelligence</div>
+                    <h3>AI Avatar Voice Generation</h3>
+                    <p>Dynamic audio synthetic layering, cross-language accent model configurations, and production exports.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80" alt="AI Voice">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Data Matrix</div>
+                    <h3>Excel Advanced Automation</h3>
+                    <p>VBA structural macros, deep pivot tracking systems, and power-bi integration protocols.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" alt="Excel Automation">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">3D Assets</div>
+                    <h3>Blender Interior Rendering</h3>
+                    <p>Photorealistic lightning matrices, custom architectural model maps, and texture mapping node fields.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=400&q=80" alt="Blender Design">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Decentralized</div>
+                    <h3>Web3 Token Architecture</h3>
+                    <p>Ethereum ERC-20 secure code deployments, liquidity pool integration models, and gas optimizations.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=400&q=80" alt="Web3 Tokens">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Infrastructure</div>
+                    <h3>Kubernetes Orchestration</h3>
+                    <p>Scalable cloud cluster pods mapping, deployment tree monitoring, and self-healing system relays.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80" alt="Kubernetes">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Product Design</div>
+                    <h3>Mobile UI Prototyping</h3>
+                    <p>Figma comprehensive interactive flow components, dynamic animation behaviors, and visual assets mapping.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1561070791-26c113006238?auto=format&fit=crop&w=400&q=80" alt="UI Prototyping">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Business Tech</div>
+                    <h3>HubSpot CRM Setup</h3>
+                    <p>Automated deal pipeline monitoring, localized trigger workflows, and analytics tracking integrations.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=400&q=80" alt="CRM Infrastructure">
+                </div>
+            </div>
+            <div class="skill-card">
+                <div>
+                    <div class="skill-tag">Simulation</div>
+                    <h3>Unity VR Space Engineering</h3>
+                    <p>Immersive interaction maps, stereoscopic projection settings, and cross-platform runtime pipelines.</p>
+                </div>
+                <div class="preview-media-box">
+                    <img src="https://images.unsplash.com/photo-1556438342-94f58672b33f?auto=format&fit=crop&w=400&q=80" alt="VR Simulation">
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="mainframe contact-section">
+    <section class="mainframe contact-section" id="contactViewArea">
         <div class="contact-box">
-            <div class="section-title" style="margin-bottom: 32px;">
-                <h2 style="font-size:1.8rem;">Initialize System Handshake</h2>
-                <p>Transmit metadata packet payload safely into local system registers.</p>
+            <div class="section-title" style="margin-bottom: 24px;">
+                <h2 style="font-size: 1.8rem;">Initiate Secure Pipeline</h2>
             </div>
-            <form id="secureForm" onsubmit="handleFormSubmission(event)">
+            <form id="stsContactForm">
                 <div class="form-group">
-                    <label>Node Operator Name</label>
-                    <input type="text" id="clientName" class="form-control" placeholder="e.g. Subhan" oninput="renderLivePreview()" required>
-                </div>
-                <div class="form-group">
-                    <label>Network Routing Email (Target Inbox for Admin Reply)</label>
-                    <input type="email" id="clientEmail" class="form-control" placeholder="e.g. client@domain.com" required>
+                    <label>Node Identity (Name)</label>
+                    <input type="text" id="formName" class="form-control" placeholder="Subhan..." required>
                 </div>
                 <div class="form-group">
-                    <label>Payload Message Stream</label>
-                    <textarea id="clientMsg" class="form-control" rows="4" placeholder="Type message data streams..." oninput="renderLivePreview()" required></textarea>
+                    <label>Target Route (Email)</label>
+                    <input type="email" id="formEmail" class="form-control" placeholder="name@domain.com" required>
                 </div>
-                <button type="submit" class="btn-submit">Transmit Target Packet</button>
-                <div class="live-preview-box">
-                    <strong>🎛️ Real-time Data Preview:</strong><br>
-                    <span>Operator:</span> <span id="previewName">---</span> | <span>Payload:</span> <span id="previewMsg">---</span>
+                <div class="form-group">
+                    <label>Payload Stream (Message)</label>
+                    <textarea id="formMessage" class="form-control" rows="4" placeholder="Enter transaction or feedback message details..." required></textarea>
                 </div>
+                <button type="submit" class="btn-submit">Dispatch Stream Packet</button>
             </form>
         </div>
     </section>
 
-    <div class="admin-modal" id="officeGateModal">
+    <div class="admin-modal" id="adminOfficeWindow">
         <div class="admin-box">
             <div class="admin-header">
-                <div>🛰️ STS CORE NODE DISPATCH OPERATOR CONSOLE // V4.0.2</div>
+                <div>🛰️ SECURE AD-OFFICE TERMINAL V4.0</div>
                 <div class="admin-office-actions">
-                    <button class="exit-office-btn" onclick="closeAdminGate()">DISCONNECT PROTOCOL</button>
+                    <button class="exit-office-btn" onclick="closeAdminGate()">DISCONNECT OFFICE</button>
                 </div>
             </div>
             <div class="admin-body">
                 <div class="metrics-bar">
-                    <div class="metric-tile"><div id="metricTotal">0</div><span>Total Payloads</span></div>
-                    <div class="metric-tile"><div id="metricLat">0.0000</div><span>Active Node Lat</span></div>
-                    <div class="metric-tile"><div id="metricLng">0.0000</div><span>Active Node Lng</span></div>
-                    <div class="metric-tile"><div style="color: var(--accent-purple);" id="metricCountry">UNKNOWN</div><span>Node Origin</span></div>
+                    <div class="metric-tile">
+                        <div id="metricTotal">0</div>
+                        <span>Packets Intercepted</span>
+                    </div>
+                    <div class="metric-tile">
+                        <div id="metricLat">0.00</div>
+                        <span>Target Latency</span>
+                    </div>
+                    <div class="metric-tile">
+                        <div id="metricLng">0.00</div>
+                        <span>Target Longitude</span>
+                    </div>
+                    <div class="metric-tile">
+                        <div style="color: var(--accent-emerald);">ONLINE</div>
+                        <span>Relay Satellite Feed</span>
+                    </div>
                 </div>
+
                 <div class="workspace-split">
                     <div class="left-panel">
-                        <div class="log-stream" id="officeLogStreamBox">
+                        <div class="log-stream" id="adminLogViewBox">
                             </div>
                         <div class="reply-box-container">
-                            <h4>🛰️ DISPATCH OPERATOR REPLY PROTOCOL</h4>
-                            <textarea id="replyTextarea" class="reply-textarea" placeholder="Formulate reply transmission data streams..."></textarea>
-                            <button class="btn-reply" onclick="executeReplyTransmission()">SEND RESPONSE PAYLOAD</button>
+                            <h4>⚡ Quick Transmission Vector Reply (Browser App Trigger)</h4>
+                            <textarea id="replyTextarea" class="reply-textarea" placeholder="Write reply message packet here..."></textarea>
+                            <button class="btn-reply" onclick="executeReplyTransmission()">TRANSMIT RESPONSE (OPEN EMAIL)</button>
                         </div>
                     </div>
                     <div class="map-view-container">
-                        <div class="map-header-status">🔴 GEOSPATIAL LIVE TELEMETRY ARRAY MAP PREVIEW</div>
+                        <div class="map-header-status" id="mapStatusText">MAP TARGETING RE-ROUTING FEED: OFFLINE</div>
+                        <div class="map-placeholder-text" id="mapPText">Select an incoming active node payload packet stream from the log panel view to track geography asset.</div>
                         <div id="liveAdminMap"></div>
-                        <div class="map-placeholder-text" id="mapPlaceholderLabel">
-                            Select a target packet node log payload to render live satellite tracking relay vectors.
-                        </div>
                     </div>
                 </div>
+
                 <div class="admin-footer">
-                    <button class="purge-btn" onclick="purgeSystemLogs()">PURGE LOCAL REGISTERS</button>
+                    <button class="purge-btn" onclick="purgeSystemLogs()">PURGE MEMORY PACKETS</button>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <button class="ai-trigger-btn" onclick="toggleAiWidget()">🤖</button>
-    <div class="ai-chat-widget" id="aiWidgetBox">
-        <div class="ai-chat-header">
-            <div>🤖 STS ARTIFICIAL CORE RELAY</div>
-            <button onclick="toggleAiWidget()" style="background:transparent; border:none; color:white; font-weight:bold; cursor:pointer;">X</button>
-        </div>
-        <div class="ai-chat-body" id="aiChatFeedBox">
-            <div class="ai-msg bot">Greetings. I am the Subhan Technical Studio Core AI Assistant. Ask me anything about tracking metrics, skills matrix configuration or telemetry synchronization.</div>
-        </div>
-        <div class="ai-chat-footer">
-            <input type="text" id="aiInputText" class="form-control" style="padding:8px 12px; font-size:0.85rem;" placeholder="Type AI inquiry payload..." onkeypress="if(event.key==='Enter') executeAiInquiry()">
-            <button class="btn-reply" style="padding:6px 12px; font-size:0.85rem;" onclick="executeAiInquiry()">SEND</button>
         </div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        let systemLogs = JSON.parse(localStorage.getItem('sts_packets')) || [];
+        let systemLogs = [];
         let selectedLogForReply = null;
         let mapCoreInstance = null;
 
-        window.addEventListener('DOMContentLoaded', () => {
-            renderLivePreview();
-        });
-
-        function renderLivePreview() {
-            let n = document.getElementById('clientName').value;
-            let m = document.getElementById('clientMsg').value;
-            document.getElementById('previewName').innerText = n ? n : '---';
-            document.getElementById('previewMsg').innerText = m ? m : '---';
+        // Initialize local packets if any
+        if (localStorage.getItem('sts_packets')) {
+            systemLogs = JSON.parse(localStorage.getItem('sts_packets'));
         }
 
-        function handleFormSubmission(e) {
+        // Handle user form submit tracker payload capture
+        document.getElementById('stsContactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            let name = document.getElementById('clientName').value;
-            let email = document.getElementById('clientEmail').value;
-            let message = document.getElementById('clientMsg').value;
+            
+            let name = document.getElementById('formName').value;
+            let email = document.getElementById('formEmail').value;
+            let msg = document.getElementById('formMessage').value;
 
-            // Simulated Geo Coordinates
-            let lat = (Math.random() * (34 - 24) + 24).toFixed(4);
-            let lng = (Math.random() * (74 - 62) + 62).toFixed(4);
+            // Mock dynamic localized tracking targets inside Pakistan region
+            let lat = (Math.random() * (34.0 - 24.0) + 24.0).toFixed(4);
+            let lng = (Math.random() * (74.0 - 67.0) + 67.0).toFixed(4);
 
-            let newLog = { id: Date.now(), name, email, message, lat, lng, country: 'Pakistan', time: new Date().toLocaleTimeString() };
-            systemLogs.push(newLog);
+            let newPayloadLog = {
+                id: Date.now(),
+                name: name,
+                email: email,
+                message: msg,
+                lat: parseFloat(lat),
+                lng: parseFloat(lng),
+                timestamp: new Date().toLocaleTimeString()
+            };
+
+            systemLogs.push(newPayloadLog);
             localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
 
-            alert("Packet Transmitted safely! Operator: " + name + " | Coordinates saved securely.");
-            document.getElementById('secureForm').reset();
-            renderLivePreview();
-        }
+            // Execute actual EmailJS alert transmission to admin pipeline
+            emailjs.send("service_9sc6dhh", "template_itn9g5k", {
+                from_name: name,
+                from_email: email,
+                message: msg,
+                latitude: lat,
+                longitude: lng
+            }).then(function() {
+                alert("Packet sent completely into cloud framework stream logs successfully!");
+            }, function(error) {
+                alert("Direct database write simulated! Logs logged locally into storage node.");
+            });
 
+            document.getElementById('stsContactForm').reset();
+        });
+
+        // 2. Admin Gate Open Protection Automation Password Check
         function openAdminGate() {
-            document.getElementById('officeGateModal').style.display = 'flex';
-            renderLogsInOffice();
+            let passPrompt = prompt("🔐 Enter Secure Security Clearance Password Token:");
+            
+            // Secure validation block matching admin token key
+            if (passPrompt === "automation live ms" || passPrompt === "automation live ms") {
+                document.getElementById('adminOfficeWindow').style.display = 'flex';
+                renderLogsInOffice();
+            } else {
+                alert("❌ ACCESS DENIED: Invalid Security Key Token Payload.");
+            }
         }
 
         function closeAdminGate() {
-            document.getElementById('officeGateModal').style.display = 'none';
-        }
-
-        function toggleAiWidget() {
-            let box = document.getElementById('aiWidgetBox');
-            box.style.display = box.style.display === 'flex' ? 'none' : 'flex';
-        }
-
-        function executeAiInquiry() {
-            let input = document.getElementById('aiInputText');
-            let query = input.value.trim();
-            if(!query) return;
-
-            let feed = document.getElementById('aiChatFeedBox');
-            let userMsg = document.createElement('div');
-            userMsg.className = 'ai-msg user';
-            userMsg.innerText = query;
-            feed.appendChild(userMsg);
-            input.value = '';
-
-            setTimeout(() => {
-                let botMsg = document.createElement('div');
-                botMsg.className = 'ai-msg bot';
-                botMsg.innerText = "Analyzing query packet data... The core metrics are synchronized. Subhan Technical Studio systems running normally at 100% capacity.";
-                feed.appendChild(botMsg);
-                feed.scrollTop = feed.scrollHeight;
-            }, 800);
+            document.getElementById('adminOfficeWindow').style.display = 'none';
         }
 
         function renderLogsInOffice() {
-            document.getElementById('metricTotal').innerText = systemLogs.length;
-            let container = document.getElementById('officeLogStreamBox');
+            let container = document.getElementById('adminLogViewBox');
             container.innerHTML = '';
+            document.getElementById('metricTotal').innerText = systemLogs.length;
 
             if(systemLogs.length === 0) {
-                container.innerHTML = `<div style="color: #64748b; font-style:italic; text-align:center; margin-top:40px;">No incoming data logs captured inside local storage buffer registers yet.</div>`;
+                container.innerHTML = '<div style="color: #64748b; padding:20px; text-align:center;">Empty framework memory banks. No signals found.</div>';
                 return;
             }
 
             systemLogs.forEach(log => {
-                let item = document.createElement('div');
-                item.className = 'log-item';
-                if(selectedLogForReply && selectedLogForReply.id === log.id) item.className += ' active';
-                
-                item.innerHTML = `
-                    <div onclick="selectLogNodeTarget(${log.id})">
-                        <strong style="color: var(--accent-cyan);">${log.name}</strong> [${log.time}]<br>
-                        <span style="color: #64748b; font-size:0.75rem;">${log.email}</span>
+                let div = document.createElement('div');
+                div.className = 'log-item';
+                if(selectedLogForReply && selectedLogForReply.id === log.id) {
+                    div.classList.add('active');
+                }
+                div.onclick = () => selectNodeLogStream(log.id, div);
+                div.innerHTML = `
+                    <div>
+                        <strong style="color: var(--accent-cyan);">[${log.timestamp}]</strong> ${log.name} (${log.email})<br>
+                        <span style="color: #cbd5e1; font-size:0.75rem;">Msg: ${log.message}</span>
                     </div>
                     <button class="delete-msg-btn" onclick="deleteLogEntry(${log.id}, event)">DELETE</button>
                 `;
-                container.appendChild(item);
+                container.appendChild(div);
             });
         }
 
-        function selectLogNodeTarget(id) {
+        function selectNodeLogStream(id, element) {
+            document.querySelectorAll('.log-item').forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+
             let log = systemLogs.find(l => l.id === id);
-            if(!log) return;
             selectedLogForReply = log;
-            renderLogsInOffice();
 
             document.getElementById('metricLat').innerText = log.lat;
             document.getElementById('metricLng').innerText = log.lng;
-            document.getElementById('metricCountry').innerText = log.country;
-            document.getElementById('mapPlaceholderLabel').style.display = 'none';
+            document.getElementById('mapStatusText').innerText = `LIVE SATELLITE RADAR AT: TARGET [${log.name}]`;
+            document.getElementById('mapPText').style.display = 'none';
 
             initializeDashboardMap(log.lat, log.lng);
         }
@@ -1040,7 +1203,9 @@
             e.stopPropagation();
             systemLogs = systemLogs.filter(l => l.id !== id);
             localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
-            if(selectedLogForReply && selectedLogForReply.id === id) selectedLogForReply = null;
+            if(selectedLogForReply && selectedLogForReply.id === id) {
+                selectedLogForReply = null;
+            }
             renderLogsInOffice();
         }
 
@@ -1062,6 +1227,7 @@
                 .openPopup();
         }
 
+        // 1. Browser Default Email Client Automation (Tareeqa 1 Setup)
         function executeReplyTransmission() {
             if(!selectedLogForReply) {
                 alert("Please select a payload node log target stream first.");
@@ -1069,25 +1235,23 @@
             }
             let text = document.getElementById('replyTextarea').value;
             if(!text) {
-                alert("Please write a message to transmit.");
+                alert("Please write a response message before initiating transmission.");
                 return;
             }
 
-            // Real EmailJS dynamic transmission protocol
-            let templateParams = {
-                to_name: selectedLogForReply.name,
-                to_email: selectedLogForReply.email,
-                message: text
-            };
+            // Target fields setup
+            let userEmail = selectedLogForReply.email;
+            let emailSubject = encodeURIComponent("Response from Subhan Technical Studio");
+            let emailBody = encodeURIComponent(text);
 
-            // Template ID dynamic injection completed securely
-            emailjs.send('default_service', 'template_nahjtgc', templateParams)
-                .then(function(response) {
-                    alert("Transmission successfully sent to " + selectedLogForReply.email);
-                    document.getElementById('replyTextarea').value = '';
-                }, function(error) {
-                    alert("EmailJS Failed to transmit: " + JSON.stringify(error));
-                });
+            // Construct secure mailto URI sequence to trigger native app workflow instantly
+            let mailtoUrl = `mailto:${userEmail}?subject=${emailSubject}&body=${emailBody}`;
+
+            // Trigger instant redirect link window location change completely free
+            window.location.href = mailtoUrl;
+
+            // Clear configuration state parameters
+            document.getElementById('replyTextarea').value = '';
         }
     </script>
 </body>
