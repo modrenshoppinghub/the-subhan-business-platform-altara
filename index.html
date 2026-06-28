@@ -306,7 +306,7 @@
             line-height: 1.5;
         }
 
-        /* NEW DYNAMIC AI TESTIMONIAL MATRIX STYLES */
+        /* DYNAMIC AI TESTIMONIAL MATRIX STYLES */
         .ai-matrix-section {
             padding: 64px 0;
         }
@@ -332,6 +332,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
+            transition: opacity 0.4s ease;
         }
 
         .matrix-card {
@@ -344,7 +345,6 @@
             justify-content: space-between;
             min-height: 220px;
             position: relative;
-            transition: all 0.5s ease-in-out;
         }
 
         .matrix-card::before {
@@ -887,7 +887,7 @@
         </div>
 
         <div class="skills-grid">
-            <div class="skill-card" onmouseenter="updateSkillTracker('Graphic Design', 'Vector graphic layouts, asset generation pipelines, and high-fidelity asset rendering models.', 'design')"><div><div class="skill-tag">Design</div><h3>Graphic Design</h3><p>Vector layouts, asset generation, and creative composition templates.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Graphic Design', 'Vector graphic layouts, asset generation pipelines, and high-fidelity asset rendering models.', 'design')"><div><div class="skill-tag">Design</div>  <h3>Graphic Design</h3><p>Vector layouts, asset generation, and creative composition templates.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('YouTube Thumbnail Design', 'High click-through optimized graphic asset containers tailored for dynamic viral indexing algorithms.', 'youtube')"><div><div class="skill-tag">Design</div><h3>YouTube Thumbnail Design</h3><p>High click-through optimized graphic containers for media assets.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('UI/UX Design', 'Figma user interface mapping, micro-interaction state models, and structured layout wireframing loops.', 'ui-design')"><div><div class="skill-tag">Design</div><h3>UI/UX Design</h3><p>Figma interface mapping and structural wireframing blueprints.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('Logo & Branding', 'Scalable brand identity vector elements, geometric guidelines, and structural design blueprints.', 'branding')"><div><div class="skill-tag">Design</div><h3>Logo & Branding</h3><p>Scalable vector assets and unified identity guidelines.</p></div></div>
@@ -923,7 +923,7 @@
                     <span style="width: 8px; height: 8px; background: var(--accent-emerald); border-radius: 50%; box-shadow: 0 0 8px var(--accent-emerald);"></span>
                     AUTONOMOUS TESTIMONIAL MATRIX LIVE
                 </span>
-                <span id="matrixSyncStatus" style="color: var(--text-secondary);">SYNC STATUS: RANDOMIZING INDEPENDENT CLIENT NODES...</span>
+                <span id="matrixSyncStatus" style="color: var(--accent-emerald);">SYNC STATUS: ENCODED REVIEWS LIVE</span>
             </div>
             
             <div class="section-title" style="margin-bottom: 40px; text-align: left;">
@@ -932,16 +932,7 @@
             </div>
 
             <div class="matrix-grid" id="testimonialGrid">
-                <div class="matrix-card">
-                    <p class="matrix-text">"Loading matrix feedback packet..."</p>
                 </div>
-                <div class="matrix-card">
-                    <p class="matrix-text">"Loading matrix feedback packet..."</p>
-                </div>
-                <div class="matrix-card">
-                    <p class="matrix-text">"Loading matrix feedback packet..."</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1048,11 +1039,11 @@
             { id: 3, name: "Zainab Malik", email: "zainab@cloud.com", message: "Interested in Python Script Automation.", ip: "39.44.110.5", lat: 33.6844, lng: 73.0479, source: "WhatsApp Shared Node", device: "iPhone OS (Safari Mobile Mobile)" }
         ];
 
-        window.onload = function() {
+        // System Core Initialization
+        document.addEventListener("DOMContentLoaded", function() {
             renderLogsInOffice();
-            // Start Autonomous Testimonial Generator Loop
-            initAutonomousMatrix();
-        };
+            initAutonomousMatrix(); // Immediate load trigger
+        });
 
         function toggleAIChat() {
             let widget = document.getElementById('aiWidget');
@@ -1164,14 +1155,11 @@
             let subject = encodeURIComponent("Reply from Subhan Technical Studio");
             let body = encodeURIComponent(text);
             window.location.href = `mailto:${selectedLogForReply.email}?subject=${subject}&body=${body}`;
-
             document.getElementById('replyTextarea').value = '';
         }
 
-        /* -------------------------------------------------------------
-           AUTONOMOUS AI TESTIMONIAL MATRIX GENERATION LOOP
-        ------------------------------------------------------------- */
-        const fakeNames = ["Alexander Wright", "Sophia Vance", "Liam Rodriguez", "Emma Watson", "Ethan Hunt", "Zayn Malik", "Olivia Chen", "Marcus Aurelius", "Harvey Specter", "Elena Rostova", "Daniel Craig", "Ayesha Khan", "Rohan Sharma"];
+        /* AUTONOMOUS AI TESTIMONIAL MATRIX GENERATION SYSTEM */
+        const fakeNames = ["Alexander Wright", "Sophia Vance", "Liam Rodriguez", "Emma Watson", "Ethan Hunt", "Zayn Malik", "Olivia Chen", "Marcus Aurelius", "Harvey Specter", "Elena Rostova", "Ayesha Khan", "Rohan Sharma"];
         const fakeRoles = ["SaaS Founder", "Crypto Architect", "YouTube Strategist", "Creative Director", "Automation Lead", "E-commerce Giant", "Fullstack Consultant", "Media Agency Head", "Growth Hacker"];
         const fakeFeedbacks = [
             "Subhan Technical Studio completely reconfigured our digital blueprint. The 100 skills cluster execution pipeline is flawless.",
@@ -1200,7 +1188,6 @@
             let shuffledFeedbacks = shuffleArray([...fakeFeedbacks]);
             
             let htmlBatch = "";
-            // We take 3 completely randomized elements for the grid display
             for (let i = 0; i < 3; i++) {
                 let name = shuffledNames[i];
                 let role = shuffledRoles[i];
@@ -1227,26 +1214,28 @@
         function initAutonomousMatrix() {
             const grid = document.getElementById('testimonialGrid');
             const statusNode = document.getElementById('matrixSyncStatus');
+            if(!grid) return;
             
-            // First load execution
+            // Instantly inject content first (Fixes the "Loading..." bug)
             grid.innerHTML = generateUniqueTestimonialsBatch();
             
-            // Loop pattern simulation (Every 10 seconds, it shifts/injects new unique fake reviews on the fly)
+            // Background interval updates loop (Every 10 seconds)
             setInterval(() => {
-                statusNode.innerText = "SYNC STATUS: COMPILING NEW INCOMING NETWORK SENSORS FEEDBACK...";
-                statusNode.style.color = "var(--accent-amber)";
-                
-                // Add soft fading transition effect simulation
+                if(statusNode) {
+                    statusNode.innerText = "SYNC STATUS: COMPILING NEW DATA STREAM...";
+                    statusNode.style.color = "var(--accent-amber)";
+                }
                 grid.style.opacity = "0.3";
                 
                 setTimeout(() => {
                     grid.innerHTML = generateUniqueTestimonialsBatch();
                     grid.style.opacity = "1";
-                    statusNode.innerText = "SYNC STATUS: AUTOMATED VALIDATION COMPLETE // ENCODED REVIEWS LIVE";
-                    statusNode.style.color = "var(--accent-emerald)";
-                }, 800);
-
-            }, 10000); // 10 seconds interval loop for preview display (Change to 86400000 for exactly 24 hours/day-by-day refresh loop)
+                    if(statusNode) {
+                        statusNode.innerText = "SYNC STATUS: ENCODED REVIEWS LIVE";
+                        statusNode.style.color = "var(--accent-emerald)";
+                    }
+                }, 400);
+            }, 10000);
         }
     </script>
 </body>
