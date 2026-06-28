@@ -180,7 +180,6 @@
             margin: 0 auto 40px auto;
         }
 
-        /* LIVE PREVIEW DASHBOARD STYLING */
         .preview-dashboard {
             background: #090e1a;
             border: 1px solid var(--border);
@@ -294,6 +293,21 @@
             padding: 40px;
         }
 
+        /* INSTRUCTION SUBMISSION ALIGNMENT BAR */
+        .submit-instruction-banner {
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px dashed var(--accent-amber);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-amber);
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 0.2px;
+        }
+
         .form-group {
             margin-bottom: 20px;
         }
@@ -340,6 +354,35 @@
 
         .btn-submit:hover {
             transform: translateY(-2px);
+        }
+
+        /* PERSISTENT LEFT SIDE WHATSAPP MODULE */
+        .whatsapp-left-sidebar {
+            position: fixed;
+            left: 24px;
+            bottom: 24px;
+            z-index: 160;
+            display: flex;
+            align-items: center;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            font-size: 1.6rem;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1) rotate(8deg);
         }
 
         .admin-modal {
@@ -614,7 +657,7 @@
         }
         .ai-msg { padding: 8px 12px; border-radius: 8px; max-width: 80%; line-height: 1.4; }
         .ai-msg.user { background: var(--border); align-self: flex-end; color: white; }
-        .ai-msg.bot { background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.2); align-start: flex-start; color: white; }
+        .ai-msg.bot { background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.2); align-self: flex-start; color: white; }
         
         .ai-trigger-btn {
             position: fixed;
@@ -647,6 +690,14 @@
     </style>
 </head>
 <body>
+
+    <div class="whatsapp-left-sidebar">
+        <a href="https://wa.me/923229270513" target="_blank" class="whatsapp-btn" title="Contact via WhatsApp">
+            <svg style="width:28px; height:28px; fill:currentColor; vertical-align:middle;" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.4.011 11.966.011c3.182.001 6.176 1.24 8.428 3.497 2.253 2.256 3.489 5.253 3.487 8.437-.004 6.618-5.344 11.954-11.91 11.954-2.005-.001-3.973-.505-5.718-1.463L0 24zm6.549-2.507c1.614.957 3.563 1.463 5.357 1.464 5.444 0 9.873-4.409 9.876-9.832.002-2.628-1.017-5.097-2.872-6.956C17.054 4.31 14.593 3.29 11.97 3.29c-5.45 0-9.882 4.41-9.885 9.833-.001 1.958.513 3.871 1.488 5.564L2.576 21.41l3.03-.794-.001.003zM16.904 14.03c-.273-.137-1.616-.797-1.866-.888-.25-.093-.433-.138-.614.137-.182.274-.704.888-.863 1.071-.159.183-.318.206-.592.069-.273-.137-1.155-.426-2.201-1.359-.814-.726-1.364-1.623-1.524-1.897-.159-.273-.017-.422.12-.558.124-.122.273-.319.41-.479.137-.16.182-.274.273-.457.091-.183.046-.343-.023-.48-.069-.137-.614-1.482-.84-2.031-.221-.53-.445-.458-.614-.467-.16-.008-.342-.01-.523-.01-.183 0-.479.069-.73.343-.25.274-.955.934-.955 2.279 0 1.345.979 2.642 1.116 2.825.137.183 1.925 2.941 4.664 4.123.652.28 1.161.448 1.557.574.655.209 1.252.179 1.724.108.526-.078 1.616-.662 1.843-1.302.227-.64.227-1.188.159-1.302-.069-.115-.25-.183-.523-.32z"/>
+            </svg>
+        </a>
+    </div>
 
     <header>
         <div class="mainframe nav-wrapper">
@@ -797,6 +848,11 @@
 
     <section class="mainframe contact-section">
         <div class="contact-box">
+            
+            <div class="submit-instruction-banner">
+                After submitting the information, please contact us on WhatsApp.
+            </div>
+
             <div class="section-title" style="margin-bottom: 32px;">
                 <h2 style="font-size:1.8rem;">Initialize System Handshake</h2>
                 <p>Transmit metadata packet payload safely into your active email registers.</p>
@@ -869,7 +925,7 @@
     <div class="ai-chat-widget" id="aiWidget">
         <div class="ai-chat-header"><span>🤖 STS Security & AI Core</span><button onclick="toggleAIChat()" style="background:none; border:none; color:white; font-weight:bold;">×</button></div>
         <div class="ai-chat-body" id="aiChatBody">
-            <div class="ai-msg bot">Asalam-o-Alaikum Subhan! Email target routed directly into secure mail pipeline.</div>
+            <div class="ai-msg bot">Asalam-o-Alaikum Subhan! Email target routed directly into secure mail pipeline. WhatsApp interface anchors active.</div>
         </div>
     </div>
 
@@ -893,7 +949,6 @@
             document.getElementById('previewMsg').innerText = document.getElementById('clientMsg').value || "---";
         }
 
-        // REAL-TIME SKILL TRACKER PREVIEW UPDATE FUNCTION
         function updateSkillTracker(title, desc) {
             document.getElementById('previewTitle').innerText = title;
             document.getElementById('previewDesc').innerText = desc;
@@ -930,6 +985,7 @@
 
         function renderLogsInOffice() {
             let stream = document.getElementById('logStream');
+            if (!stream) return;
             stream.innerHTML = '';
             document.getElementById('countMsg').innerText = systemLogs.length;
             systemLogs.forEach(log => {
