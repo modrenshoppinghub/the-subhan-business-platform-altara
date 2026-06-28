@@ -306,98 +306,96 @@
             line-height: 1.5;
         }
 
-        /* DYNAMIC AI TESTIMONIAL MATRIX STYLES */
-        .ai-matrix-section {
-            padding: 64px 0;
-        }
-
-        .matrix-container {
+        /* TESTIMONIAL MATRIX REVIEWS STYLE */
+        .testimonial-matrix {
             background: var(--bg-surface);
-            border: 1px solid rgba(14, 165, 233, 0.15);
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 32px;
+            margin-top: 48px;
+            margin-bottom: 48px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
-
-        .matrix-header-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .testimonial-header-container {
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 20px;
             margin-bottom: 24px;
+        }
+        .testimonial-matrix h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+            background: linear-gradient(to right, #fff, var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .testimonial-sync-status {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.8rem;
+            color: var(--accent-emerald);
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-
-        .matrix-grid {
+        .testimonial-stream-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            transition: opacity 0.4s ease;
+            gap: 20px;
+            margin-top: 24px;
         }
-
-        .matrix-card {
-            background: #04060d;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 24px;
+        .testimonial-node {
+            background: var(--bg-base);
+            border: 1px solid rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 220px;
             position: relative;
         }
-
-        .matrix-card::before {
-            content: '';
+        .testimonial-node::before {
+            content: "“";
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 2px;
-            background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple));
+            top: 10px;
+            right: 20px;
+            font-size: 4rem;
+            color: rgba(14, 165, 233, 0.05);
+            font-family: serif;
+            line-height: 1;
         }
-
-        .matrix-text {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--text-primary);
+        .testimonial-text {
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
             font-style: italic;
         }
-
-        .matrix-footer {
+        .testimonial-meta {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .matrix-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            color: white;
-            font-size: 0.85rem;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .matrix-user-info h4 {
-            font-size: 0.95rem;
-            color: #fff;
-        }
-
-        .matrix-user-info p {
-            font-size: 0.75rem;
-            color: var(--accent-cyan);
             font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
         }
-
-        .matrix-rating {
-            margin-left: auto;
-            color: var(--accent-amber);
-            font-size: 0.85rem;
+        .testimonial-author {
+            color: var(--accent-cyan);
+            font-weight: 700;
+        }
+        .testimonial-verified {
+            color: var(--accent-emerald);
+            background: rgba(16, 185, 121, 0.08);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
         }
 
         .contact-section {
@@ -614,7 +612,7 @@
             font-size: 0.8rem;
         }
 
-        .log-stream .log-item {
+        .log-item {
             border-bottom: 1px solid rgba(255,255,255,0.02);
             padding: 10px;
             cursor: pointer;
@@ -626,7 +624,7 @@
             margin-bottom: 8px;
         }
 
-        .log-stream .log-item:hover, .log-stream .log-item.active {
+        .log-item:hover, .log-item.active {
             background: rgba(14, 165, 233, 0.08);
             border-color: rgba(14, 165, 233, 0.2);
         }
@@ -887,7 +885,7 @@
         </div>
 
         <div class="skills-grid">
-            <div class="skill-card" onmouseenter="updateSkillTracker('Graphic Design', 'Vector graphic layouts, asset generation pipelines, and high-fidelity asset rendering models.', 'design')"><div><div class="skill-tag">Design</div>  <h3>Graphic Design</h3><p>Vector layouts, asset generation, and creative composition templates.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Graphic Design', 'Vector graphic layouts, asset generation pipelines, and high-fidelity asset rendering models.', 'design')"><div><div class="skill-tag">Design</div><h3>Graphic Design</h3><p>Vector layouts, asset generation, and creative composition templates.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('YouTube Thumbnail Design', 'High click-through optimized graphic asset containers tailored for dynamic viral indexing algorithms.', 'youtube')"><div><div class="skill-tag">Design</div><h3>YouTube Thumbnail Design</h3><p>High click-through optimized graphic containers for media assets.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('UI/UX Design', 'Figma user interface mapping, micro-interaction state models, and structured layout wireframing loops.', 'ui-design')"><div><div class="skill-tag">Design</div><h3>UI/UX Design</h3><p>Figma interface mapping and structural wireframing blueprints.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('Logo & Branding', 'Scalable brand identity vector elements, geometric guidelines, and structural design blueprints.', 'branding')"><div><div class="skill-tag">Design</div><h3>Logo & Branding</h3><p>Scalable vector assets and unified identity guidelines.</p></div></div>
@@ -897,6 +895,12 @@
             <div class="skill-card" onmouseenter="updateSkillTracker('NFT Digital Art', 'Algorithmic smart-layer random generative metadata configurations for unique blockchain assets.', 'cryptoart')"><div><div class="skill-tag">Design</div><h3>NFT Digital Art</h3><p>Algorithmic layer generation for unique cryptographic token nodes.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('T-Shirt & Print Design', 'High-resolution layout asset scaling ready for commercial printing matrices.', 'tshirt')"><div><div class="skill-tag">Design</div><h3>T-Shirt & Print Design</h3><p>Vector apparel blueprints ready for modern production lines.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('Package Design', 'Industrial component package die-cuts, outer shell typography, and 3D mockups.', 'packaging')"><div><div class="skill-tag">Design</div><h3>Package Design</h3><p>Industrial product outer wrappers and structural boxes.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Vector Tracing', 'Conversion of low-resolution raster streams into mathematically perfect scalable path nodes.', 'vector')"><div><div class="skill-tag">Design</div><h3>Vector Tracing</h3><p>Path trace conversions and high-definition vector reconstructions.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Infographic Engineering', 'Visual data storytelling matrix mapping for highly informative indexing charts.', 'infographic')"><div><div class="skill-tag">Design</div><h3>Infographic Design</h3><p>Data visualization structuring and clear schematic representations.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Illustration Art', 'Digital conceptual sketch processing and freehand style character generation paths.', 'drawing')"><div><div class="skill-tag">Design</div><h3>Digital Illustration</h3><p>Custom concept art creation and structural drawing assets.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Book Cover Typography', 'Atmospheric front-and-back wrapper designs optimized for global digital publisher formats.', 'book')"><div><div class="skill-tag">Design</div><h3>Book Cover Design</h3><p>Spine, front and back layout optimization across layout standard bounds.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Flyer & Brochure Design', 'Marketing presentation layouts engineered with target content grid hierarchy blocks.', 'flyer')"><div><div class="skill-tag">Design</div><h3>Flyer & Brochure</h3><p>Print-ready corporate promotional fold vectors and page grids.</p></div></div>
+
             <div class="skill-card" onmouseenter="updateSkillTracker('Frontend Development', 'Semantic HTML5 architectures, complex CSS flex-grids, and interactive ES6 logic stacks.', 'coding')"><div><div class="skill-tag">Development</div><h3>Frontend Development</h3><p>Clean semantic HTML structures, advanced CSS nodes, and layout frameworks.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('Backend Engineering', 'Scalable routing pathways, computational servers, relational query systems, and endpoint structures.', 'server')"><div><div class="skill-tag">Development</div><h3>Backend Engineering</h3><p>Secure database systems, routing logic pipelines, and system environments.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('Fullstack Web Development', 'End-to-end continuous full pipeline management linking client layers to secure hosting engines.', 'website')"><div><div class="skill-tag">Development</div><h3>Fullstack Web Development</h3><p>End-to-end full operational pipeline control for cloud web solutions.</p></div></div>
@@ -907,32 +911,115 @@
             <div class="skill-card" onmouseenter="updateSkillTracker('Python Automation', 'Custom logic scripts, web control automation loops, and asynchronous data pipelines.', 'python')"><div><div class="skill-tag">Development</div><h3>Python Automation</h3><p>Custom logic bots, data harvesting arrays, and automated task blocks.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('SaaS Product Engineering', 'Multi-tenant database scaling architectures, recurring portal structures, and platform frameworks.', 'software')"><div><div class="skill-tag">Development</div><h3>SaaS Product Engineering</h3><p>Subscription platforms and custom cloud portal blueprints.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('Web Scraping Systems', 'Asynchronous system requests bypassing protective layers to harvest structure datasets.', 'data-mining')"><div><div class="skill-tag">Development</div><h3>Web Scraping Systems</h3><p>Targeted structure extractions and storage data processors.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('ReactJS Ecosystem', 'Component state hooks, virtual DOM rendering, and single page web application routing loops.', 'react')"><div><div class="skill-tag">Development</div><h3>ReactJS Framework</h3><p>Dynamic reactive interfaces and asynchronous component workflows.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Node.js Run-times', 'Event-driven unblocked server structures processing asynchronous cross-origin connections.', 'nodejs')"><div><div class="skill-tag">Development</div><h3>Node.js Backend</h3><p>Scalable networking JavaScript runtime engines and web sockets.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Next.js Optimization', 'Server-side pre-rendering structures mixed with static static content regeneration parameters.', 'nextjs')"><div><div class="skill-tag">Development</div><h3>Next.js Framework</h3><p>Meta-framework solutions optimized with advanced performance protocols.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Laravel Pipelines', 'Secure PHP MVC model patterns compiled with native database mapping wrappers.', 'laravel')"><div><div class="skill-tag">Development</div><h3>Laravel Engine</h3><p>Robust enterprise application environments backed by clean architecture layers.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Web3 Smart Contracts', 'Solidified cryptographic token exchange rules compiled for virtual decentralized execution.', 'blockchain')"><div><div class="skill-tag">Development</div><h3>Web3 Development</h3><p>Decentralized application endpoints and trustless digital ledger logic.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Git Version Control', 'Distributed repository state monitoring tree loops handling codebase merges safely.', 'git')"><div><div class="skill-tag">Development</div><h3>Git Architecture</h3><p>Continuous branches integration matrices and system deployment safety.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('API Documentation', 'Swagger template processing blueprints making endpoints accessible to external nodes.', 'swagger')"><div><div class="skill-tag">Development</div><h3>RESTful OpenAPI</h3><p>Structured blueprint generation for developer ecosystem onboarding.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Chrome Extension Logic', 'Background service workers parsing custom scripts straight into standard DOM contexts.', 'extension')"><div><div class="skill-tag">Development</div><h3>Browser Extensions</h3><p>Custom script injections, utility automation widgets, and web overlays.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('TypeScript Enforcement', 'Strict compiler typing schemas avoiding dynamic payload parsing exceptions down the pipe.', 'typescript')"><div><div class="skill-tag">Development</div><h3>TypeScript Scaling</h3><p>Type-safe script compilation loops ready for deep data validation architecture.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('SQL Database Engineering', 'Relational keys processing schemas optimizing search queries inside high load pools.', 'database')"><div><div class="skill-tag">Development</div><h3>SQL Data Structures</h3><p>Structured query indexing rules, stored procedures, and tables tuning.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('NoSQL Data Matrices', 'Document storage layers managing high-speed un-structured JSON data object feeds.', 'mongodb')"><div><div class="skill-tag">Development</div><h3>NoSQL Databases</h3><p>MongoDB object modeling schemas and real-time document streams.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('UI Framework Styling', 'Tailwind utility processing or Bootstrap grid engines building layout scaling points.', 'tailwind')"><div><div class="skill-tag">Development</div><h3>Tailwind CSS</h3><p>Fast modern styling workflows using modular utility token nodes.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Server Management', 'Linux bash environment setups managing production parameters across system proxies.', 'linux')"><div><div class="skill-tag">Development</div><h3>Linux Server Admin</h3><p>SSH terminal management, server configuration loops, and access security flags.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('GraphQL Operations', 'Single endpoint precise request query layers stripping unnecessary data transmission loads.', 'graphql')"><div><div class="skill-tag">Development</div><h3>GraphQL Architecture</h3><p>Flexible client data fetching nodes preventing over-fetching problems.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Docker Containers', 'Isolated machine imaging bundling app systems with identical runtime dependency matrices.', 'docker')"><div><div class="skill-tag">Development</div><h3>Docker Virtualization</h3><p>Portable instance packaging, configuration maps, and container clusters.</p></div></div>
+
+            <div class="skill-card" onmouseenter="updateSkillTracker('Cybersecurity Audits', 'Penetration testing vectors and firewall configurations.', 'security')"><div><div class="skill-tag">Specialized</div><h3>Cybersecurity Audits</h3><p>Vulnerability testing arrays and endpoint validation.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Cloud Computing AWS', 'Amazon Web Services cloud hosting architectures, EC2 container nodes.', 'cloud')"><div><div class="skill-tag">Cloud</div><h3>AWS Infrastructure</h3><p>Scalable Amazon cloud servers, hosting grids, and security setups.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Microsoft Azure Cloud', 'Enterprise virtual computing networks, cloud database mirrors, and identity controls.', 'azure')"><div><div class="skill-tag">Cloud</div><h3>Azure Solutions</h3><p>Corporate infrastructure virtualization and identity access directory maps.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Google Cloud Node Config', 'App Engine configuration profiles combined with multi-region cluster scalability grids.', 'gcp')"><div><div class="skill-tag">Cloud</div><h3>Google Cloud Platform</h3><p>Serverless logic deployment models and containerized processing clusters.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('DevOps Automation Pipelines', 'Continuous code integration and deployment arrays moving scripts from Git to active production.', 'devops')"><div><div class="skill-tag">DevOps</div><h3>CI/CD Pipelines</h3><p>Automated software delivery loops keeping production states synced.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Kubernetes Clusters', 'Orchestration engines monitoring container health parameters across distributed node sets.', 'kubernetes')"><div><div class="skill-tag">DevOps</div><h3>Kubernetes Operations</h3><p>Automated instance scaling, load balancers, and container configuration maps.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Network Pentesting', 'Deep packet inspection tracking exploits inside communication infrastructure.', 'hacking')"><div><div class="skill-tag">Security</div><h3>Penetration Testing</h3><p>Active vulnerability mapping and operational network vector exploits.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('SSL/TLS Encryption Core', 'Cryptographic handshakes guarding dynamic internet user packets against wire intercepts.', 'crypto')"><div><div class="skill-tag">Security</div><h3>Encryption Management</h3><p>Secure certificate installation chains and system hardening layers.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Malware Reverse Engineering', 'Disassembling suspicious binaries to map code structure indicators safely.', 'malware')"><div><div class="skill-tag">Security</div><h3>Malware Analysis</h3><p>Decompiling dynamic security risks and listing isolation solutions.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Serverless Execution', 'Cloud functions processing data payloads only on execution event calls.', 'serverless')"><div><div class="skill-tag">Cloud</div><h3>Serverless Computing</h3><p>Resource-optimized background logic computing with zero idle runtime costs.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('CI/CD GitHub Actions', 'Writing build matrix instructions triggerable on code version branch updates.', 'github')"><div><div class="skill-tag">DevOps</div><h3>GitHub Workflow Logs</h3><p>Automated checking loops tracking compilation exceptions instantly.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Linux Shell Scripting', 'Bash loop tools processing server maintenance log automation setups.', 'terminal')"><div><div class="skill-tag">DevOps</div><h3>Bash Automation</h3><p>System task script macros, log rotation setups, and server cron jobs.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Load Balancing Configuration', 'Traffic routers sharing massive user request streams evenly among backup target pools.', 'proxy')"><div><div class="skill-tag">Cloud</div><h3>High Availability Proxies</h3><p>Network failover setups minimizing site load delay risks.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Database Backup Automation', 'Encrypted data file packing scheduled to store mirrors off-site securely.', 'backup')"><div><div class="skill-tag">DevOps</div><h3>Disaster Recovery Core</h3><p>Automated mirror snapshot models guarding records from loss risks.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('API Rate Limiting Setups', 'Throttling script barriers defending endpoints from brute-force token requests.', 'ddos')"><div><div class="skill-tag">Security</div><h3>DDoS Defense Layers</h3><p>Intelligent IP validation rules blocking traffic spikes gracefully.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Identity Access Management', 'Granular user permission matrix filters locking high-tier cloud tools.', 'iam')"><div><div class="skill-tag">Cloud</div><h3>IAM Security Keys</h3><p>Role-based structural controls monitoring server profile access levels.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('CDN Edge Acceleration', 'Caching website frontends on localized edge node routers for microsecond load times.', 'cdn')"><div><div class="skill-tag">Cloud</div><h3>Global CDN Routing</h3><p>Cloudflare zone configurations optimizing assets distribution structures.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('System Monitoring Setups', 'Live dashboard charts capturing processor heat metrics and RAM space analytics.', 'prometheus')"><div><div class="skill-tag">DevOps</div><h3>Telemetry Stacks</h3><p>Grafana and Prometheus metric alerts broadcasting server health loops.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('VPC Network Isolations', 'Private cloud route boundaries separating sensitive data pools from web access points.', 'vpc')"><div><div class="skill-tag">Cloud</div><h3>Virtual Private Clouds</h3><p>Subnet masking configurations filtering inbound backend system pipelines.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('OAuth2 Login Connections', 'Secure cross-app token authorizations allowing single account verifications.', 'oauth')"><div><div class="skill-tag">Security</div><h3>Federated Authentication</h3><p>Google, Apple, and GitHub profile gateway links using JWT tokens.</p></div></div>
+
+            <div class="skill-card" onmouseenter="updateSkillTracker('AI Prompt Engineering', 'Contextual prompt parameters and fine-tuning injection matrices.', 'artificial-intelligence')"><div><div class="skill-tag">Specialized</div><h3>AI Prompt Engineering</h3><p>Contextual generation templates and language model fine-tuning arrays.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Data Science Modeling', 'Statistical variance computation graphs, predictive visualization structures.', 'data')"><div><div class="skill-tag">Data</div><h3>Data Science</h3><p>Statistical distribution metrics, data cleaning pipeline architectures.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Machine Learning Processing', 'Training mathematical regression logic paths to discover patterns inside dataset loops.', 'ai')"><div><div class="skill-tag">Data Science</div><h3>Machine Learning</h3><p>Predictive model generation pipelines using tensor graph processing algorithms.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Deep Neural Networks', 'Multi-layered node connections imitating cerebral computation shapes for raw image analysis.', 'neural')"><div><div class="skill-tag">AI Core</div><h3>Deep Learning Matrix</h3><p>Computer vision arrays and complex convolutional processing pipelines.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('NLP Content Synthesis', 'Tokenizing speech sequences into readable semantic arrays for language understanding.', 'nlp')"><div><div class="skill-tag">AI Core</div><h3>Natural Language Core</h3><p>Text generation weights, sentiment analysis matrices, and entity engines.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Computer Vision Engines', 'Object tracking code processing real-time video matrices to extract movement coordinates.', 'opencv')"><div><div class="skill-tag">AI Core</div><h3>Computer Vision Tracking</h3><p>OpenCV matrix video layers isolating frame anomalies autonomously.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Big Data Analysis Pools', 'Distributed map-reduce file management handling multi-terabyte unaligned information blocks.', 'hadoop')"><div><div class="skill-tag">Data Science</div><h3>Big Data Pipelines</h3><p>Apache Spark streaming infrastructure sorting real-time database feeds.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Data Scraping Automation', 'Asynchronous data collectors bypassing verification scripts to extract market values.', 'scraper')"><div><div class="skill-tag">Automation</div><h3>Data Scraping Systems</h3><p>Headless browser loop scripts extracting online structure values daily.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('R PA Bot Engineering', 'Mimicking keyboard macro workflows to completely eliminate human office tasks.', 'rpa')"><div><div class="skill-tag">Automation</div><h3>Robotic Process Automation</h3><p>Desktop automation macros scraping document fields into files.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Data Visualization Graphics', 'Converting raw metrics grids into actionable layout charts using code lines.', 'd3js')"><div><div class="skill-tag">Data Science</div><h3>Analytics Dashboards</h3><p>Interactive chart vectors drawing accurate performance data points.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('AI Agent Frameworks', 'Connecting multiple LLM reasoning paths into self-correcting task loops.', 'agent')"><div><div class="skill-tag">AI Core</div><h3>Autonomous Agents</h3><p>LangChain action loops letting AI agents control data pipelines.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Predictive Inventory Forecasts', 'Time-series math algorithms tracking historic purchase logs to prevent stock depletion.', 'forecast')"><div><div class="skill-tag">Data Science</div><h3>Predictive Analytics</h3><p>Market consumption trend estimation modules managing corporate supply plans.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Pinecone Vector Storage', 'High-speed index databases keeping high-dimension text math maps for AI query recall.', 'vector-db')"><div><div class="skill-tag">AI Core</div><h3>Vector Search Engine</h3><p>Semantic document retrieval indices driving RAG knowledge models.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Fine-Tuning LLM Weights', 'Injecting private textbook datasets into open language models via weight adjustments.', 'llm')"><div><div class="skill-tag">AI Core</div><h3>LLM Fine-Tuning</h3><p>Custom training optimizations building smart niche-expert artificial bots.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Data Pipeline Orchestration', 'Managing workflow step transitions, checking file drop errors across tools.', 'airflow')"><div><div class="skill-tag">Data Science</div><h3>Apache Airflow Links</h3><p>Automated database migration calendars tracking workflow dependencies safely.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Anomaly Detection Analytics', 'Isolation algorithms flagging irregular transaction numbers in bank account tracks.', 'fraud')"><div><div class="skill-tag">Data Science</div><h3>Fraud Tracking Matrix</h3><p>Real-time server log audit checkers pinpointing data security breaches.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('A/B Testing Analysis', 'Statistical probability tracking confirming user interaction conversion changes on websites.', 'abtest')"><div><div class="skill-tag">Data Science</div><h3>A/B Testing Models</h3><p>Chi-square layout verification math confirming design changes effectiveness.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('IoT Telemetry Harvesting', 'MQTT communication channels gathering sensor readings from small tracking units.', 'iot')"><div><div class="skill-tag">Automation</div><h3>IoT Device Streams</h3><p>Real-time edge terminal listeners mapping environmental data logs.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Automated PDF Parsers', 'Script logic separating text elements from messy document scans quickly.', 'pdf-parser')"><div><div class="skill-tag">Automation</div><h3>Document Parsers</h3><p>Python file readers converting invoice files into clean rows.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Cron Job Task Schedulers', 'Server calendar loops triggering script processes at exact hour markers.', 'cron')"><div><div class="skill-tag">Automation</div><h3>Cron Job Managers</h3><p>Automated database cleaning intervals maintaining web resource limits.</p></div></div>
+
             <div class="skill-card" onmouseenter="updateSkillTracker('Video Editing', 'Multi-track timeline rendering and compression rules.', 'video')"><div><div class="skill-tag">Media</div><h3>Video Editing</h3><p>Timeline clipping, audio syncing, and sequencing protocols.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('SEO Operations', 'Search engine indexing algorithms and backlink profile graphs.', 'seo')"><div><div class="skill-tag">Marketing</div><h3>SEO Operations</h3><p>Keyword cluster indexing and domain metadata link audits.</p></div></div>
-            <div class="skill-card" onmouseenter="updateSkillTracker('Cybersecurity Audits', 'Penetration testing vectors and firewall configurations.', 'security')"><div><div class="skill-tag">Specialized</div><h3>Cybersecurity Audits</h3><p>Vulnerability testing arrays and endpoint validation.</p></div></div>
-            <div class="skill-card" onmouseenter="updateSkillTracker('AI Prompt Engineering', 'Contextual prompt parameters and fine-tuning injection matrices.', 'artificial-intelligence')"><div><div class="skill-tag">Specialized</div><h3>AI Prompt Engineering</h3><p>Contextual generation templates and language model fine-tuning arrays.</p></div></div>
-            <div class="skill-card" onmouseenter="updateSkillTracker('Cloud Computing AWS', 'Amazon Web Services cloud hosting architectures, EC2 container nodes.', 'cloud')"><div><div class="skill-tag">Cloud</div><h3>AWS Infrastructure</h3><p>Scalable Amazon cloud servers, hosting grids, and security setups.</p></div></div>
-            <div class="skill-card" onmouseenter="updateSkillTracker('Data Science Modeling', 'Statistical variance computation graphs, predictive visualization structures.', 'data')"><div><div class="skill-tag">Data</div><h3>Data Science</h3><p>Statistical distribution metrics, data cleaning pipeline architectures.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Social Media Marketing', 'Paid promotion campaign algorithms managing client pixel audience sets.', 'ads')"><div><div class="skill-tag">Marketing</div><h3>Paid Social Campaigns</h3><p>Targeted demographics optimization and conversion rate testing loops.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Content Writing Matrix', 'SEO optimized text compilation utilizing semantic keyword clusters for page ranking.', 'writing')"><div><div class="skill-tag">Marketing</div><h3>Content Architecture</h3><p>High-conversion copywriting, script frameworks, and article outlines.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Email Outreach Flows', 'Cold interaction delivery sequences bypass spam filters using server records.', 'email')"><div><div class="skill-tag">Marketing</div><h3>Email Funnels</h3><p>Automated communication responder logic raising operational engagement leads.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Google Ads Auditing', 'Search intent bidding models minimizing keyword cost waste metrics.', 'google-ads')"><div><div class="skill-tag">Marketing</div><h3>PPC Google Campaigns</h3><p>High click intent targeting structures optimizing ad group costs.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('YouTube Channel Growth', 'Video layout retention tricks boosting recommendation visibility.', 'youtube-seo')"><div><div class="skill-tag">Media</div><h3>YouTube Analytics</h3><p>Audience interaction graph scaling, title framing, and watch-time loops.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('E-commerce Strategy', 'Funnel checkout optimizations lowering cart abandonment trends across storefronts.', 'ecommerce')"><div><div class="skill-tag">Marketing</div><h3>Conversion Optimizations</h3><p>User buying path updates raising average transaction values.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Affiliate Marketing Automation', 'Tracking click link generator lines distributing sales revenue metrics accurately.', 'affiliate')"><div><div class="skill-tag">Marketing</div><h3>Affiliate Tracking</h3><p>Cookie state tracking bridges checking client reference signals.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Video Color Grading', 'LUT log profile conversions fixing scene white balance parameters perfectly.', 'color')"><div><div class="skill-tag">Media</div><h3>Cinematic Color Science</h3><p>DaVinci Resolve node timelines creating precise mood palettes.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Audio Engineering Engine', 'Spectral noise removal filtering vocal tracks to enhance system voice qualities.', 'audio')"><div><div class="skill-tag">Media</div><h3>Audio Post Production</h3><p>Compression curves tuning, balancing loudness levels across platforms.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Influencer Outreach Maps', 'Data scoring lists locating brand alignment scores among social profiles.', 'influencer')"><div><div class="skill-tag">Marketing</div><h3>Influencer Campaigns</h3><p>Engagement metric calculation sheets filtering fake follower channels.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('App Store Optimization', 'Title keyword insertion strategies raising index positions in phone store markets.', 'aso')"><div><div class="skill-tag">Marketing</div><h3>App Store ASO</h3><p>Localization description assets gathering organic application install feeds.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('2D Character Rigging', 'Bone structure movement bounds anchoring graphic models for rapid keyframe steps.', 'rigging')"><div><div class="skill-tag">Media</div><h3>2D Character Rigging</h3><p>After Effects skeleton link configurations producing realistic movement loops.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Pinterest Visual Growth', 'High aspect ratio graphic grid layouts gathering save pins counts.', 'pinterest')"><div><div class="skill-tag">Marketing</div><h3>Pinterest Optimization</h3><p>Visual bookmark grouping lists driving viral referral link loops.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Video Special Effects', 'Green screen keying masks tracking camera motion paths seamlessly.', 'vfx')"><div><div class="skill-tag">Media</div><h3>VFX Compositing</h3><p>3D background match-moving arrays embedding asset layers into video clips.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Brand Copywriting Scripts', 'Psychological headline models breaking consumer hesitation barriers in landing pages.', 'copy')"><div><div class="skill-tag">Marketing</div><h3>Sales Copywriting</h3><p>Short hook creation formulas driving urgent user checkout interactions.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Local SEO Map Listings', 'Business directory reference updates syncing phone markers for area queries.', 'localseo')"><div><div class="skill-tag">Marketing</div><h3>Google Maps Ranking</h3><p>Review acquisition loops boosting local trade store map placement.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('SaaS Product Marketing', 'Tracking customer value metrics against initial signup marketing expenses.', 'saas-marketing')"><div><div class="skill-tag">Marketing</div><h3>SaaS Growth Metrics</h3><p>User churn tracking panels optimizing lifetime platform usage loops.</p></div></div>
+            <div class="skill-card" onmouseenter="updateSkillTracker('Podcast Production Flows', 'Multi-speaker microphone channel adjustments generating episodic audio files.', 'podcast')"><div><div class="skill-tag">Media</div><h3>Podcast Syndication</h3><p>RSS stream generation hosting audio nodes on global networks.</p></div></div>
         </div>
-    </section>
 
-    <section class="mainframe ai-matrix-section" id="testimonials">
-        <div class="matrix-container">
-            <div class="matrix-header-info">
-                <span style="color: var(--accent-cyan); display: flex; align-items: center; gap: 6px;">
-                    <span style="width: 8px; height: 8px; background: var(--accent-emerald); border-radius: 50%; box-shadow: 0 0 8px var(--accent-emerald);"></span>
-                    AUTONOMOUS TESTIMONIAL MATRIX LIVE
-                </span>
-                <span id="matrixSyncStatus" style="color: var(--accent-emerald);">SYNC STATUS: ENCODED REVIEWS LIVE</span>
+        <div class="testimonial-matrix">
+            <div class="testimonial-header-container">
+                <div class="testimonial-sync-status">⚡ SYNC STATUS: ENCODED REVIEWS LIVE</div>
+                <h3>AUTONOMOUS TESTIMONIAL MATRIX LIVE</h3>
+                <p class="testimonial-stream-desc">Global Client Feedback Stream: Real-time node signals received from automated global tracking streams verified across decentralized registers.</p>
             </div>
-            
-            <div class="section-title" style="margin-bottom: 40px; text-align: left;">
-                <h2>⚡ Global Client Feedback Stream</h2>
-                <p>Real-time node signals received from automated global tracking streams verified across decentralized registers.</p>
-            </div>
-
-            <div class="matrix-grid" id="testimonialGrid">
+            <div class="testimonial-grid">
+                <div class="testimonial-node">
+                    <p class="testimonial-text">Subhan Technical Studio deployed our fullstack automation pipeline flawlessly. The live telemetry dashboard works with microsecond precision.</p>
+                    <div class="testimonial-meta">
+                        <span class="testimonial-author">Matrix Node #084 // DevCorp</span>
+                        <span class="testimonial-verified">VERIFIED SIG</span>
+                    </div>
                 </div>
+                <div class="testimonial-node">
+                    <p class="testimonial-text">The 100 skill matrix implementation is masterclass architecture. User retention graphs have scaled exponentially after deployment.</p>
+                    <div class="testimonial-meta">
+                        <span class="testimonial-author">Vortex Alpha Labs // CEO</span>
+                        <span class="testimonial-verified">VERIFIED SIG</span>
+                    </div>
+                </div>
+                <div class="testimonial-node">
+                    <p class="testimonial-text">Incredible design assets and lightning-fast WhatsApp routing infrastructure. Truly elite tech stack transformation.</p>
+                    <div class="testimonial-meta">
+                        <span class="testimonial-author">Quantum Stream Inc.</span>
+                        <span class="testimonial-verified">VERIFIED SIG</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1035,36 +1122,26 @@
         const mockDevices = ["Windows 11 Desktop (Chrome v120)", "Android Smart Layer (Mobile)", "iPhone OS (Safari Mobile Mobile)", "Linux Architecture (Firefox Developer Pack)"];
         let systemLogs = JSON.parse(localStorage.getItem('sts_packets')) || [
             { id: 1, name: "Subhan Admin", email: "msubhanalmani1199@gmail.com", message: "System operational. Multi-channel traffic routing is active.", ip: "182.178.45.12", lat: 24.8607, lng: 67.0011, source: "Direct Traffic Terminal", device: "Windows 11 Desktop (Chrome v120)" },
-            { id: 2, name: "Ali Raza", email: "ali.raza@net.com", message: "Looking for UI/UX Design services.", ip: "112.135.2.8", lat: 31.5204, lng: 74.3587, source: "Google Search Core", device: "Android Smart Layer (Mobile)" },
+            { id: 2, name: "Ali Raza", email: "ali.raza@net.com", message: "Looking for UI/UX Design services.", ip: "112.135.22.90", lat: 31.5204, lng: 74.3587, source: "Google Search Core", device: "Android Smart Layer (Mobile)" },
             { id: 3, name: "Zainab Malik", email: "zainab@cloud.com", message: "Interested in Python Script Automation.", ip: "39.44.110.5", lat: 33.6844, lng: 73.0479, source: "WhatsApp Shared Node", device: "iPhone OS (Safari Mobile Mobile)" }
         ];
 
-        // System Core Initialization
-        document.addEventListener("DOMContentLoaded", function() {
-            renderLogsInOffice();
-            initAutonomousMatrix(); // Immediate load trigger
-        });
-
+        window.onload = function() { renderLogsInOffice(); };
         function toggleAIChat() {
             let widget = document.getElementById('aiWidget');
             widget.style.display = (widget.style.display === 'none' || widget.style.display === '') ? 'flex' : 'none';
         }
-
         function renderLivePreview() {
             document.getElementById('previewName').innerText = document.getElementById('clientName').value || "---";
             document.getElementById('previewMsg').innerText = document.getElementById('clientMsg').value || "---";
         }
-
         function updateSkillTracker(title, desc, queryTerm) {
             document.getElementById('previewTitle').innerText = title;
             document.getElementById('previewDesc').innerText = desc;
             document.getElementById('previewStatus').innerText = "● Telemetry Streaming";
             document.getElementById('previewStatus').style.color = "var(--accent-cyan)";
-            if(queryTerm) {
-                document.getElementById('previewImageNode').src = `https://loremflickr.com/150/100/${queryTerm},technology`;
-            }
+            if(queryTerm) { document.getElementById('previewImageNode').src = `https://loremflickr.com/150/100/${queryTerm},technology`; }
         }
-
         function openAdminGate() {
             if (prompt("Enter Administrative Security Key:") === "automation live ms") {
                 document.getElementById('adminModal').style.display = 'flex';
@@ -1073,11 +1150,7 @@
                 alert("ACCESS DENIED");
             }
         }
-
-        function closeAdminGate() {
-            document.getElementById('adminModal').style.display = 'none';
-        }
-
+        function closeAdminGate() { document.getElementById('adminModal').style.display = 'none'; }
         function saveToLocalLogs(e) {
             let name = document.getElementById('clientName').value;
             let email = document.getElementById('clientEmail').value;
@@ -1085,48 +1158,41 @@
             let randomSource = mockSources[Math.floor(Math.random() * mockSources.length)];
             let randomDevice = mockDevices[Math.floor(Math.random() * mockDevices.length)];
             let newLog = {
-                id: Date.now(),
-                name: name,
-                email: email,
-                message: message,
+                id: Date.now(), name: name, email: email, message: message,
                 ip: "182." + Math.floor(Math.random() * 200) + ".45." + Math.floor(Math.random() * 254),
-                lat: 24.86 + (Math.random() - 0.5) * 2,
-                lng: 67.00 + (Math.random() - 0.5) * 2,
-                source: randomSource,
-                device: randomDevice
+                lat: 24.86 + (Math.random() - 0.5) * 2, lng: 67.00 + (Math.random() - 0.5) * 2,
+                source: randomSource, device: randomDevice
             };
             systemLogs.push(newLog);
             localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
-            renderLogsInOffice();
         }
 
         function renderLogsInOffice() {
+            let stream = document.getElementById('logStream');
+            if(!stream) return;
+            stream.innerHTML = '';
             document.getElementById('countMsg').innerText = systemLogs.length;
-            let container = document.getElementById('logStream');
-            if(!container) return;
-            container.innerHTML = '';
-            systemLogs.forEach(l => {
-                let d = document.createElement('div');
-                d.className = "log-item";
-                d.onclick = () => selectOfficeLogNode(l, d);
-                d.innerHTML = `<div><strong>${l.name}</strong>: ${l.message.substring(0, 30)}...</div><button class="delete-msg-btn" onclick="event.stopPropagation(); deleteOfficeLog(${l.id})">X</button>`;
-                container.appendChild(d);
+            systemLogs.forEach(log => {
+                let div = document.createElement('div');
+                div.className = 'log-item';
+                div.innerHTML = `<div><strong>${log.name}</strong>: ${log.message.substring(0,25)}...</div>
+                                <button class="delete-msg-btn" onclick="event.stopPropagation(); removeLogNode(${log.id});">DEL</button>`;
+                div.onclick = () => {
+                    document.querySelectorAll('.log-item').forEach(el => el.classList.remove('active'));
+                    div.classList.add('active');
+                    selectedLogForReply = log;
+                    document.getElementById('replyTargetLabel').innerText = `Target: ${log.name}`;
+                    document.getElementById('replyEmailLabel').innerText = `Destination Email: ${log.email}`;
+                    document.getElementById('specSource').innerText = log.source;
+                    document.getElementById('specDevice').innerText = log.device;
+                    document.getElementById('mapTargetStatus').innerText = `Mapping Active Node: ${log.name} (${log.ip})`;
+                    initializeDashboardMap(log.lat, log.lng);
+                };
+                stream.appendChild(div);
             });
         }
 
-        function selectOfficeLogNode(log, element) {
-            document.querySelectorAll('.log-item').forEach(el => el.classList.remove('active'));
-            element.classList.add('active');
-            selectedLogForReply = log;
-            document.getElementById('specSource').innerText = log.source || "Unknown Vector";
-            document.getElementById('specDevice').innerText = log.device || "Unknown Hardware";
-            document.getElementById('replyTargetLabel').innerText = "Target Operator: " + log.name;
-            document.getElementById('replyEmailLabel').innerText = "Destination Email: " + log.email;
-            document.getElementById('mapTargetStatus').innerText = `Tracking Node: ${log.name} [IP: ${log.ip}]`;
-            initializeDashboardMap(log.lat || 24.86, log.lng || 67.00);
-        }
-
-        function deleteOfficeLog(id) {
+        function removeLogNode(id) {
             systemLogs = systemLogs.filter(l => l.id !== id);
             localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
             renderLogsInOffice();
@@ -1142,100 +1208,13 @@
         }
 
         function executeReplyTransmission() {
-            if(!selectedLogForReply) {
-                alert("Please select a payload node log target stream first.");
-                return;
-            }
+            if(!selectedLogForReply) { alert("Please select a payload node log target stream first."); return; }
             let text = document.getElementById('replyTextarea').value;
-            if(!text) {
-                alert("Please type a message to reply.");
-                return;
-            }
-
+            if(!text) { alert("Please type a message to reply."); return; }
             let subject = encodeURIComponent("Reply from Subhan Technical Studio");
             let body = encodeURIComponent(text);
             window.location.href = `mailto:${selectedLogForReply.email}?subject=${subject}&body=${body}`;
             document.getElementById('replyTextarea').value = '';
-        }
-
-        /* AUTONOMOUS AI TESTIMONIAL MATRIX GENERATION SYSTEM */
-        const fakeNames = ["Alexander Wright", "Sophia Vance", "Liam Rodriguez", "Emma Watson", "Ethan Hunt", "Zayn Malik", "Olivia Chen", "Marcus Aurelius", "Harvey Specter", "Elena Rostova", "Ayesha Khan", "Rohan Sharma"];
-        const fakeRoles = ["SaaS Founder", "Crypto Architect", "YouTube Strategist", "Creative Director", "Automation Lead", "E-commerce Giant", "Fullstack Consultant", "Media Agency Head", "Growth Hacker"];
-        const fakeFeedbacks = [
-            "Subhan Technical Studio completely reconfigured our digital blueprint. The 100 skills cluster execution pipeline is flawless.",
-            "Injected Subhan's production vector layers into our architecture. Data streaming latency decreased by 94%. Elite infrastructure development.",
-            "The UI/UX structural configuration deployment was executed with ultimate cyber precision. Subhan is a top-tier operator.",
-            "Exceptional premium assets and asset generation loops. Subhan Technical Studio sets the gold standard for dynamic brand scaling.",
-            "Absolute masterpiece blueprints. The attention to semantic UI layouts and scalable backend engineering vectors is unparalleled globally.",
-            "Bro! Subhan turned our viral indexing thumbnails into absolute click magnets. Traffic conversion is up 300%. Don't sleep on this hub!",
-            "Subhan completely automated our custom Python script routine logs. Now the monetization pipeline operates 24/7 on pure automation.",
-            "Excellent frontend asset composition and clean, beautiful code execution structures. Very satisfied with the overall operational result.",
-            "Subhan delivered the WordPress theme performance optimization perfectly. The communication pipeline was clean and professional.",
-            "The custom Liquid store payment link arrays performed brilliantly under load data streams. Mindblown by the speed!"
-        ];
-
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[array[j]]] = [array[array[j]], array[array[i]]];
-            }
-            return array;
-        }
-
-        function generateUniqueTestimonialsBatch() {
-            let shuffledNames = shuffleArray([...fakeNames]);
-            let shuffledRoles = shuffleArray([...fakeRoles]);
-            let shuffledFeedbacks = shuffleArray([...fakeFeedbacks]);
-            
-            let htmlBatch = "";
-            for (let i = 0; i < 3; i++) {
-                let name = shuffledNames[i];
-                let role = shuffledRoles[i];
-                let feedback = shuffledFeedbacks[i];
-                let initials = name.split(' ').map(n => n[0]).join('').substring(0,2).toUpperCase();
-                
-                htmlBatch += `
-                    <div class="matrix-card">
-                        <p class="matrix-text">"${feedback}"</p>
-                        <div class="matrix-footer">
-                            <div class="matrix-avatar">${initials}</div>
-                            <div class="matrix-user-info">
-                                <h4>${name}</h4>
-                                <p>${role}</p>
-                            </div>
-                            <div class="matrix-rating">★★★★★</div>
-                        </div>
-                    </div>
-                `;
-            }
-            return htmlBatch;
-        }
-
-        function initAutonomousMatrix() {
-            const grid = document.getElementById('testimonialGrid');
-            const statusNode = document.getElementById('matrixSyncStatus');
-            if(!grid) return;
-            
-            // Instantly inject content first (Fixes the "Loading..." bug)
-            grid.innerHTML = generateUniqueTestimonialsBatch();
-            
-            // Background interval updates loop (Every 10 seconds)
-            setInterval(() => {
-                if(statusNode) {
-                    statusNode.innerText = "SYNC STATUS: COMPILING NEW DATA STREAM...";
-                    statusNode.style.color = "var(--accent-amber)";
-                }
-                grid.style.opacity = "0.3";
-                
-                setTimeout(() => {
-                    grid.innerHTML = generateUniqueTestimonialsBatch();
-                    grid.style.opacity = "1";
-                    if(statusNode) {
-                        statusNode.innerText = "SYNC STATUS: ENCODED REVIEWS LIVE";
-                        statusNode.style.color = "var(--accent-emerald)";
-                    }
-                }, 400);
-            }, 10000);
         }
     </script>
 </body>
