@@ -306,6 +306,88 @@
             line-height: 1.5;
         }
 
+        /* AI TESTIMONIAL MATRIX STYLES */
+        .ai-matrix-section {
+            padding: 64px 0;
+        }
+
+        .matrix-box {
+            background: var(--bg-surface);
+            border: 1px solid rgba(14, 165, 233, 0.15);
+            border-radius: 24px;
+            padding: 40px;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 30px;
+        }
+
+        @media(max-width: 768px) {
+            .matrix-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .matrix-output {
+            background: #04060d;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 250px;
+            position: relative;
+        }
+
+        .matrix-output::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple));
+        }
+
+        .matrix-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #fff;
+        }
+
+        .matrix-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .matrix-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .matrix-author-info h4 {
+            font-size: 0.95rem;
+            color: #fff;
+        }
+
+        .matrix-author-info p {
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
         .contact-section {
             padding: 64px 0 96px 0;
         }
@@ -551,7 +633,6 @@
             color: white;
         }
 
-        /* NEW METADATA ANALYTICS CARD INSIDE OFFICE */
         .telemetry-specs-panel {
             background: #04060d;
             border: 1px solid var(--border);
@@ -804,7 +885,6 @@
             <div class="skill-card" onmouseenter="updateSkillTracker('NFT Digital Art', 'Algorithmic smart-layer random generative metadata configurations for unique blockchain assets.', 'cryptoart')"><div><div class="skill-tag">Design</div><h3>NFT Digital Art</h3><p>Algorithmic layer generation for unique cryptographic token nodes.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('T-Shirt & Print Design', 'High-resolution layout asset scaling ready for commercial printing matrices.', 'tshirt')"><div><div class="skill-tag">Design</div><h3>T-Shirt & Print Design</h3><p>Vector apparel blueprints ready for modern production lines.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('Package Design', 'Industrial component package die-cuts, outer shell typography, and 3D mockups.', 'packaging')"><div><div class="skill-tag">Design</div><h3>Package Design</h3><p>Industrial product outer wrappers and structural boxes.</p></div></div>
-
             <div class="skill-card" onmouseenter="updateSkillTracker('Frontend Development', 'Semantic HTML5 architectures, complex CSS flex-grids, and interactive ES6 logic stacks.', 'coding')"><div><div class="skill-tag">Development</div><h3>Frontend Development</h3><p>Clean semantic HTML structures, advanced CSS nodes, and layout frameworks.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('Backend Engineering', 'Scalable routing pathways, computational servers, relational query systems, and endpoint structures.', 'server')"><div><div class="skill-tag">Development</div><h3>Backend Engineering</h3><p>Secure database systems, routing logic pipelines, and system environments.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('Fullstack Web Development', 'End-to-end continuous full pipeline management linking client layers to secure hosting engines.', 'website')"><div><div class="skill-tag">Development</div><h3>Fullstack Web Development</h3><p>End-to-end full operational pipeline control for cloud web solutions.</p></div></div>
@@ -815,13 +895,55 @@
             <div class="skill-card" onmouseenter="updateSkillTracker('Python Automation', 'Custom logic scripts, web control automation loops, and asynchronous data pipelines.', 'python')"><div><div class="skill-tag">Development</div><h3>Python Automation</h3><p>Custom logic bots, data harvesting arrays, and automated task blocks.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('SaaS Product Engineering', 'Multi-tenant database scaling architectures, recurring portal structures, and platform frameworks.', 'software')"><div><div class="skill-tag">Development</div><h3>SaaS Product Engineering</h3><p>Subscription platforms and custom cloud portal blueprints.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('Web Scraping Systems', 'Asynchronous system requests bypassing protective layers to harvest structure datasets.', 'data-mining')"><div><div class="skill-tag">Development</div><h3>Web Scraping Systems</h3><p>Targeted structure extractions and storage data processors.</p></div></div>
-
             <div class="skill-card" onmouseenter="updateSkillTracker('Video Editing', 'Multi-track timeline rendering and compression rules.', 'video')"><div><div class="skill-tag">Media</div><h3>Video Editing</h3><p>Timeline clipping, audio syncing, and sequencing protocols.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('SEO Operations', 'Search engine indexing algorithms and backlink profile graphs.', 'seo')"><div><div class="skill-tag">Marketing</div><h3>SEO Operations</h3><p>Keyword cluster indexing and domain metadata link audits.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('Cybersecurity Audits', 'Penetration testing vectors and firewall configurations.', 'security')"><div><div class="skill-tag">Specialized</div><h3>Cybersecurity Audits</h3><p>Vulnerability testing arrays and endpoint validation.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('AI Prompt Engineering', 'Contextual prompt parameters and fine-tuning injection matrices.', 'artificial-intelligence')"><div><div class="skill-tag">Specialized</div><h3>AI Prompt Engineering</h3><p>Contextual generation templates and language model fine-tuning arrays.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('Cloud Computing AWS', 'Amazon Web Services cloud hosting architectures, EC2 container nodes.', 'cloud')"><div><div class="skill-tag">Cloud</div><h3>AWS Infrastructure</h3><p>Scalable Amazon cloud servers, hosting grids, and security setups.</p></div></div>
             <div class="skill-card" onmouseenter="updateSkillTracker('Data Science Modeling', 'Statistical variance computation graphs, predictive visualization structures.', 'data')"><div><div class="skill-tag">Data</div><h3>Data Science</h3><p>Statistical distribution metrics, data cleaning pipeline architectures.</p></div></div>
+        </div>
+    </section>
+
+    <section class="mainframe ai-matrix-section">
+        <div class="matrix-box">
+            <div class="section-title" style="margin-bottom: 20px;">
+                <h2>⚡ AI Testimonial Generator Matrix</h2>
+                <p>Simulate elite network node feedback using synchronized language models instantly.</p>
+            </div>
+            
+            <div class="matrix-grid">
+                <div style="display:flex; flex-direction:column; gap:16px;">
+                    <div class="form-group" style="margin-bottom:0;">
+                        <label>Client Node Name</label>
+                        <input type="text" id="tmName" class="form-control" placeholder="e.g. David Stark" value="John Doe">
+                    </div>
+                    <div class="form-group" style="margin-bottom:0;">
+                        <label>Operational Designation / Role</label>
+                        <input type="text" id="tmRole" class="form-control" placeholder="e.g. Tech CEO, YouTuber" value="SaaS Founder">
+                    </div>
+                    <div class="form-group" style="margin-bottom:0;">
+                        <label>Matrix Transmission Tone</label>
+                        <select id="tmTone" class="form-control" style="cursor: pointer;">
+                            <option value="cyber">Cyberpunk Technical</option>
+                            <option value="premium">Premium Elite</option>
+                            <option value="hustle">Elite Hustler</option>
+                            <option value="simple">Direct & Clean</option>
+                        </select>
+                    </div>
+                    <button class="btn-submit" onclick="generateMatrixTestimonial()" style="margin-top:10px;">Compile & Generate Testimonial</button>
+                </div>
+
+                <div class="matrix-output">
+                    <div class="matrix-text" id="matrixTextNode">// Awaiting generation sequence initiation payload...</div>
+                    <div class="matrix-author">
+                        <div class="matrix-avatar" id="matrixAvatarNode">JD</div>
+                        <div class="matrix-author-info">
+                            <h4 id="matrixAuthorName">John Doe</h4>
+                            <p id="matrixAuthorRole">SaaS Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -833,8 +955,7 @@
             <div class="section-title" style="margin-bottom: 32px;">
                 <h2 style="font-size:1.8rem;">Initialize System Handshake</h2>
                 <p>Transmit metadata packet payload safely into your active email registers.</p>
-           </div>
-           
+            </div>
             <form id="secureForm" action="https://formspree.io/f/mgojykkk" method="POST" onsubmit="saveToLocalLogs(event)">
                 <div class="form-group">
                     <label>Node Operator Name</label>
@@ -847,12 +968,11 @@
                 <div class="form-group">
                     <label>Payload Message Stream</label>
                     <textarea name="message" id="clientMsg" class="form-control" rows="4" placeholder="Type message data streams..." oninput="renderLivePreview()" required></textarea>
-               </div>
+                </div>
                 <button type="submit" class="btn-submit">Transmit Target Packet</button>
-
                 <div class="live-preview-box">
                     <strong>🎛️ Real-time Data Preview:</strong><br>
-                    <span>Operator:</span> <span id="previewName">---</span> | 
+                    <span>Operator:</span> <span id="previewName">---</span> |
                     <span>Payload:</span> <span id="previewMsg">---</span>
                 </div>
             </form>
@@ -863,23 +983,21 @@
         <div class="admin-box">
             <div class="admin-header">
                 <span>🛰️ SUBHAN TECHNICAL STUDIO // ADMINISTRATIVE DASHBOARD CONFIG</span>
-               <div class="admin-office-actions">
+                <div class="admin-office-actions">
                     <div style="font-size: 0.75rem; color: var(--accent-emerald); background: rgba(16,185,129,0.1); padding: 4px 10px; border-radius: 4px;">• TRAFFIC TRACKING INTELLIGENCE ENGINE ONLINE</div>
                     <button class="exit-office-btn" onclick="closeAdminGate()">EXIT OFFICE</button>
                 </div>
             </div>
             <div class="admin-body">
                 <div class="metrics-bar">
-                     <div class="metric-tile"><div id="countMsg">0</div><span>Total Visitors</span></div>
-                     <div class="metric-tile"><div id="countGeo">4</div><span>Tracked Regions</span></div>
-                     <div class="metric-tile"><div id="lastNodeIP">182.178.45.12</div><span>Gateway IP</span></div>
-                     <div class="metric-tile"><div id="lastNodeISP" style="color: var(--accent-purple); font-size: 0.9rem;">PTCL Backbone</div><span>ISP Backbone</span></div>
+                    <div class="metric-tile"><div id="countMsg">0</div><span>Total Visitors</span></div>
+                    <div class="metric-tile"><div id="countGeo">4</div><span>Tracked Regions</span></div>
+                    <div class="metric-tile"><div id="lastNodeIP">182.178.45.12</div><span>Gateway IP</span></div>
+                    <div class="metric-tile"><div id="lastNodeISP" style="color: var(--accent-purple); font-size: 0.9rem;">PTCL Backbone</div><span>ISP Backbone</span></div>
                 </div>
-
                 <div class="workspace-split">
-                     <div class="left-panel">
+                    <div class="left-panel">
                         <div class="log-stream" id="logStream"></div>
-                        
                         <div class="telemetry-specs-panel">
                             <div class="spec-item">
                                 <label>🔌 Network Source Traffic</label>
@@ -894,15 +1012,14 @@
                                 <span id="specRegions" style="color: var(--accent-cyan); font-size: 0.75rem;">Karachi, Lahore, Islamabad, London Cloud Node</span>
                             </div>
                         </div>
-
                         <div class="reply-box-container">
-                             <h4>💬 Dispatch Operator Reply Protocol</h4>
+                            <h4>💬 Dispatch Operator Reply Protocol</h4>
                             <div id="replyTargetLabel" style="font-size: 0.8rem; color: var(--text-secondary);">Target: None selected</div>
                             <div id="replyEmailLabel" style="font-size: 0.75rem; color: var(--accent-cyan); margin-top: -6px; font-weight: bold;">Destination Email: N/A</div>
                             <textarea id="replyTextarea" class="reply-textarea" placeholder="Type administrative response payload instructions..."></textarea>
                             <button class="btn-reply" onclick="executeReplyTransmission()">Transmit Reply Payload</button>
                         </div>
-                   </div>
+                    </div>
                     <div class="map-view-container">
                         <div class="map-header-status" id="mapTargetStatus">Office Map Core: Awaiting System Node Selection...</div>
                         <div id="liveAdminMap"></div>
@@ -925,18 +1042,19 @@
     <script>
         let mapCoreInstance = null;
         let selectedLogForReply = null;
-
-        // Custom list of fake platforms and devices for visualization
         const mockSources = ["Google Search Core", "Direct Traffic Terminal", "WhatsApp Shared Node", "Facebook Traffic Vector", "GitHub Referral System"];
         const mockDevices = ["Windows 11 Desktop (Chrome v120)", "Android Smart Layer (Mobile)", "iPhone OS (Safari Mobile Mobile)", "Linux Architecture (Firefox Developer Pack)"];
-
         let systemLogs = JSON.parse(localStorage.getItem('sts_packets')) || [
             { id: 1, name: "Subhan Admin", email: "msubhanalmani1199@gmail.com", message: "System operational. Multi-channel traffic routing is active.", ip: "182.178.45.12", lat: 24.8607, lng: 67.0011, source: "Direct Traffic Terminal", device: "Windows 11 Desktop (Chrome v120)" },
-            { id: 2, name: "Ali Raza", email: "ali.raza@net.com", message: "Looking for UI/UX Design services.", ip: "112.135.22.90", lat: 31.5204, lng: 74.3587, source: "Google Search Core", device: "Android Smart Layer (Mobile)" },
+            { id: 2, name: "Ali Raza", email: "ali.raza@net.com", message: "Looking for UI/UX Design services.", ip: "112.135.2.8", lat: 31.5204, lng: 74.3587, source: "Google Search Core", device: "Android Smart Layer (Mobile)" },
             { id: 3, name: "Zainab Malik", email: "zainab@cloud.com", message: "Interested in Python Script Automation.", ip: "39.44.110.5", lat: 33.6844, lng: 73.0479, source: "WhatsApp Shared Node", device: "iPhone OS (Safari Mobile Mobile)" }
         ];
 
-        window.onload = function() { renderLogsInOffice(); };
+        window.onload = function() {
+            renderLogsInOffice();
+            // Initial generation run
+            generateMatrixTestimonial();
+        };
 
         function toggleAIChat() {
             let widget = document.getElementById('aiWidget');
@@ -953,7 +1071,6 @@
             document.getElementById('previewDesc').innerText = desc;
             document.getElementById('previewStatus').innerText = "● Telemetry Streaming";
             document.getElementById('previewStatus').style.color = "var(--accent-cyan)";
-            
             if(queryTerm) {
                 document.getElementById('previewImageNode').src = `https://loremflickr.com/150/100/${queryTerm},technology`;
             }
@@ -963,20 +1080,21 @@
             if (prompt("Enter Administrative Security Key:") === "automation live ms") {
                 document.getElementById('adminModal').style.display = 'flex';
                 setTimeout(() => { initializeDashboardMap(24.8607, 67.0011); }, 300);
-            } else { alert("ACCESS DENIED"); }
+            } else {
+                alert("ACCESS DENIED");
+            }
         }
 
-        function closeAdminGate() { document.getElementById('adminModal').style.display = 'none'; }
+        function closeAdminGate() {
+            document.getElementById('adminModal').style.display = 'none';
+        }
 
         function saveToLocalLogs(e) {
             let name = document.getElementById('clientName').value;
             let email = document.getElementById('clientEmail').value;
             let message = document.getElementById('clientMsg').value;
-            
-            // Random generation of tracking attributes simulating production analytics servers
             let randomSource = mockSources[Math.floor(Math.random() * mockSources.length)];
             let randomDevice = mockDevices[Math.floor(Math.random() * mockDevices.length)];
-
             let newLog = {
                 id: Date.now(),
                 name: name,
@@ -990,47 +1108,36 @@
             };
             systemLogs.push(newLog);
             localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
+            renderLogsInOffice();
         }
 
         function renderLogsInOffice() {
-            let stream = document.getElementById('logStream');
-            if (!stream) return;
-            stream.innerHTML = '';
             document.getElementById('countMsg').innerText = systemLogs.length;
-            systemLogs.forEach(log => {
-                let div = document.createElement('div');
-                div.className = 'log-item';
-                div.innerHTML = `
-                    <div onclick="selectLogEntry(${log.id})" style="width: 100%;">
-                        <strong>${log.name}</strong> - <span style="color:var(--accent-cyan); font-size:0.75rem;">${log.ip}</span><br>
-                        <span style="font-size:0.72rem; color:var(--accent-amber);">🌐 ${log.source || 'Direct Connection'}</span><br>
-                        <span style="font-size:0.75rem; color:var(--text-secondary);">${log.message}</span>
-                    </div>
-                    <button class="delete-msg-btn" onclick="deleteLogEntry(${log.id}, event)">X</button>
-                `;
-                stream.appendChild(div);
+            let container = document.getElementById('logStream');
+            if(!container) return;
+            container.innerHTML = '';
+            systemLogs.forEach(l => {
+                let d = document.createElement('div');
+                d.className = "log-item";
+                d.onclick = () => selectOfficeLogNode(l, d);
+                d.innerHTML = `<div><strong>${l.name}</strong>: ${l.message.substring(0, 30)}...</div><button class="delete-msg-btn" onclick="event.stopPropagation(); deleteOfficeLog(${l.id})">X</button>`;
+                container.appendChild(d);
             });
         }
 
-        function selectLogEntry(id) {
-            let log = systemLogs.find(l => l.id === id);
-            if(!log) return;
-
+        function selectOfficeLogNode(log, element) {
+            document.querySelectorAll('.log-item').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
             selectedLogForReply = log;
-            document.getElementById('replyTargetLabel').innerText = "Target Operator Node: " + log.name;
+            document.getElementById('specSource').innerText = log.source || "Unknown Vector";
+            document.getElementById('specDevice').innerText = log.device || "Unknown Hardware";
+            document.getElementById('replyTargetLabel').innerText = "Target Operator: " + log.name;
             document.getElementById('replyEmailLabel').innerText = "Destination Email: " + log.email;
-            
-            // Dynamic insertion into newly developed tracking matrix UI
-            document.getElementById('specSource').innerText = log.source || "Direct Server Traffic";
-            document.getElementById('specDevice').innerText = log.device || "Unknown Hardware OS";
-
-            document.getElementById('mapTargetStatus').innerText = "Tracking Geo Coordinates: [" + log.lat.toFixed(4) + ", " + log.lng.toFixed(4) + "]";
-            
-            initializeDashboardMap(log.lat, log.lng);
+            document.getElementById('mapTargetStatus').innerText = `Tracking Node: ${log.name} [IP: ${log.ip}]`;
+            initializeDashboardMap(log.lat || 24.86, log.lng || 67.00);
         }
 
-        function deleteLogEntry(id, e) {
-            e.stopPropagation();
+        function deleteOfficeLog(id) {
             systemLogs = systemLogs.filter(l => l.id !== id);
             localStorage.setItem('sts_packets', JSON.stringify(systemLogs));
             renderLogsInOffice();
@@ -1055,12 +1162,63 @@
                 alert("Please type a message to reply.");
                 return;
             }
-
             let subject = encodeURIComponent("Reply from Subhan Technical Studio");
             let body = encodeURIComponent(text);
-            window.location.href = `mailto:${selectedLogForReply.email}?subject=${subject}?body=${body}`;
-
+            window.location.href = `mailto:${selectedLogForReply.email}?subject=${subject}&body=${body}`;
             document.getElementById('replyTextarea').value = '';
+        }
+
+        /* NEW JAVASCRIPT LOGIC FOR AI TESTIMONIAL MATRIX */
+        const testimonialTemplates = {
+            cyber: [
+                "Subhan Technical Studio completely reconfigured our digital blueprint. The 100 skills cluster execution pipeline is flawless. Highly recommended matrix nodes!",
+                "Injected Subhan's production vector layers into our architecture. Data streaming latency decreased by 94%. Absolute elite infrastructure development.",
+                "The UI/UX structural configuration deployment was executed with ultimate cyber precision. Subhan is a top-tier operator in the automation cluster."
+            ],
+            premium: [
+                "Exceptional premium assets and asset generation loops. Subhan Technical Studio sets the gold standard for high-fidelity brand scaling layouts.",
+                "Working with Subhan was a seamless elite production upgrade. The custom Liquid store payment link arrays performed brilliantly under load data streams.",
+                "Absolute masterpiece blueprints. The attention to semantic UI layouts and scalable backend engineering vectors is unparalleled globally."
+            ],
+            hustle: [
+                "Bro! Subhan turned our viral indexing thumbnails into absolute click magnets. Traffic conversion is up 300%. Don't sleep on this 100 skills hub!",
+                "Subhan completely automated our custom Python script routine logs. Now the monetization pipeline operates 24/7 on pure automation arrays.",
+                "If you want to scale fast, implement Subhan's multi-tenant SaaS architecture framework right now. Pure unmatched hustle matrix delivery!"
+            ],
+            simple: [
+                "Excellent frontend asset composition and clean, beautiful code execution structures. Very satisfied with the overall operational result.",
+                "Subhan delivered the WordPress theme performance optimization perfectly. The communication pipeline was clean and professional.",
+                "Great experience. The API integrations and secure data processing modules operate exactly as documented."
+            ]
+        };
+
+        function generateMatrixTestimonial() {
+            let name = document.getElementById('tmName').value.trim() || "Anonymous Node";
+            let role = document.getElementById('tmRole').value.trim() || "Network Operator";
+            let tone = document.getElementById('tmTone').value;
+            
+            // Get templates based on selected tone
+            let list = testimonialTemplates[tone];
+            let randomQuote = list[Math.floor(Math.random() * list.length)];
+            
+            // Format Display info
+            document.getElementById('matrixAuthorName').innerText = name;
+            document.getElementById('matrixAuthorRole').innerText = role;
+            document.getElementById('matrixAvatarNode').innerText = name.split(' ').map(n => n[0]).join('').substring(0,2).toUpperCase();
+            
+            // Clear and Trigger AI Typing Effect
+            let textNode = document.getElementById('matrixTextNode');
+            textNode.innerText = '';
+            let index = 0;
+            
+            function typeCharacter() {
+                if(index < randomQuote.length) {
+                    textNode.innerText += randomQuote.charAt(index);
+                    index++;
+                    setTimeout(typeCharacter, 15); // Adjust typing speed here
+                }
+            }
+            typeCharacter();
         }
     </script>
 </body>
